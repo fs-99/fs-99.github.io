@@ -5,7 +5,7 @@ const matter = require("gray-matter");
 const faviconsPlugin = require("eleventy-plugin-gen-favicons");
 const tocPlugin = require("eleventy-plugin-nesting-toc");
 const { parse } = require("node-html-parser");
-const htmlMinifier = require("html-minifier");
+// const htmlMinifier = require("html-minifier");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 
 const { headerToId, namedHeadingsFilter } = require("./src/helpers/utils");
@@ -136,76 +136,76 @@ module.exports = function (eleventyConfig) {
     .use(namedHeadingsFilter)
     .use(function (md) {
       //https://github.com/DCsunset/markdown-it-mermaid-plugin
-      const origFenceRule =
-        md.renderer.rules.fence ||
-        function (tokens, idx, options, env, self) {
-          return self.renderToken(tokens, idx, options, env, self);
-        };
-      md.renderer.rules.fence = (tokens, idx, options, env, slf) => {
-        const token = tokens[idx];
-        if (token.info === "mermaid") {
-          const code = token.content.trim();
-          return `<pre class="mermaid">${code}</pre>`;
-        }
-        if (token.info === "transclusion") {
-          const code = token.content.trim();
-          return `<div class="transclusion">${md.render(code)}</div>`;
-        }
-        if (token.info.startsWith("ad-")) {
-          const code = token.content.trim();
-          const parts = code.split("\n")
-          let titleLine;
-          let collapse;
-          let collapsible = false
-          let collapsed = true
-          let icon;
-          let color;
-          let nbLinesToSkip = 0
-          for (let i = 0; i < 4; i++) {
-            if (parts[i] && parts[i].trim()) {
-              let line = parts[i] && parts[i].trim().toLowerCase()
-              if (line.startsWith("title:")) {
-                titleLine = line.substring(6);
-                nbLinesToSkip++;
-              } else if (line.startsWith("icon:")) {
-                icon = line.substring(5);
-                nbLinesToSkip++;
-              } else if (line.startsWith("collapse:")) {
-                collapsible = true
-                collapse = line.substring(9);
-                if (collapse && collapse.trim().toLowerCase() == 'open') {
-                  collapsed = false
-                }
-                nbLinesToSkip++;
-              } else if (line.startsWith("color:")) {
-                color = line.substring(6);
-                nbLinesToSkip++;
-              }
-            }
-          }
-          const foldDiv = collapsible ? `<div class="callout-fold">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-chevron-down">
-              <polyline points="6 9 12 15 18 9"></polyline>
-          </svg>
-          </div>` : "";
-          const titleDiv = titleLine
-            ? `<div class="callout-title"><div class="callout-title-inner">${titleLine}</div>${foldDiv}</div>`
-            : "";
-          let collapseClasses = titleLine && collapsible ? 'is-collapsible' : ''
-          if (collapsible && collapsed) {
-            collapseClasses += " is-collapsed"
-          }
+      // const origFenceRule =
+      //   md.renderer.rules.fence ||
+      //   function (tokens, idx, options, env, self) {
+      //     return self.renderToken(tokens, idx, options, env, self);
+      //   };
+      // md.renderer.rules.fence = (tokens, idx, options, env, slf) => {
+      //   const token = tokens[idx];
+      //   if (token.info === "mermaid") {
+      //     const code = token.content.trim();
+      //     return `<pre class="mermaid">${code}</pre>`;
+      //   }
+      //   if (token.info === "transclusion") {
+      //     const code = token.content.trim();
+      //     return `<div class="transclusion">${md.render(code)}</div>`;
+      //   }
+      //   if (token.info.startsWith("ad-")) {
+      //     const code = token.content.trim();
+      //     const parts = code.split("\n")
+      //     let titleLine;
+      //     let collapse;
+      //     let collapsible = false
+      //     let collapsed = true
+      //     let icon;
+      //     let color;
+      //     let nbLinesToSkip = 0
+      //     for (let i = 0; i < 4; i++) {
+      //       if (parts[i] && parts[i].trim()) {
+      //         let line = parts[i] && parts[i].trim().toLowerCase()
+      //         if (line.startsWith("title:")) {
+      //           titleLine = line.substring(6);
+      //           nbLinesToSkip++;
+      //         } else if (line.startsWith("icon:")) {
+      //           icon = line.substring(5);
+      //           nbLinesToSkip++;
+      //         } else if (line.startsWith("collapse:")) {
+      //           collapsible = true
+      //           collapse = line.substring(9);
+      //           if (collapse && collapse.trim().toLowerCase() == 'open') {
+      //             collapsed = false
+      //           }
+      //           nbLinesToSkip++;
+      //         } else if (line.startsWith("color:")) {
+      //           color = line.substring(6);
+      //           nbLinesToSkip++;
+      //         }
+      //       }
+      //     }
+      //     const foldDiv = collapsible ? `<div class="callout-fold">
+      //     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-chevron-down">
+      //         <polyline points="6 9 12 15 18 9"></polyline>
+      //     </svg>
+      //     </div>` : "";
+      //     const titleDiv = titleLine
+      //       ? `<div class="callout-title"><div class="callout-title-inner">${titleLine}</div>${foldDiv}</div>`
+      //       : "";
+      //     let collapseClasses = titleLine && collapsible ? 'is-collapsible' : ''
+      //     if (collapsible && collapsed) {
+      //       collapseClasses += " is-collapsed"
+      //     }
 
-          let res = `<div data-callout-metadata class="callout ${collapseClasses}" data-callout="${token.info.substring(3)
-            }">${titleDiv}\n<div class="callout-content">${md.render(
-              parts.slice(nbLinesToSkip).join("\n")
-            )}</div></div>`;
-          return res
-        }
+      //     let res = `<div data-callout-metadata class="callout ${collapseClasses}" data-callout="${token.info.substring(3)
+      //       }">${titleDiv}\n<div class="callout-content">${md.render(
+      //         parts.slice(nbLinesToSkip).join("\n")
+      //       )}</div></div>`;
+      //     return res
+      //   }
 
-        // Other languages
-        return origFenceRule(tokens, idx, options, env, slf);
-      };
+      //   // Other languages
+      //   return origFenceRule(tokens, idx, options, env, slf);
+      // };
 
       const defaultImageRule =
         md.renderer.rules.image ||
@@ -501,25 +501,25 @@ module.exports = function (eleventyConfig) {
     return str && parsed.innerHTML;
   });
 
-  eleventyConfig.addTransform("htmlMinifier", (content, outputPath) => {
-    if (
-      (process.env.NODE_ENV === "production" || process.env.ELEVENTY_ENV === "prod") &&
-      outputPath &&
-      outputPath.endsWith(".html")
-    ) {
-      return htmlMinifier.minify(content, {
-        useShortDoctype: true,
-        removeComments: true,
-        collapseWhitespace: true,
-        conservativeCollapse: true,
-        preserveLineBreaks: true,
-        minifyCSS: true,
-        minifyJS: true,
-        keepClosingSlash: true,
-      });
-    }
-    return content;
-  });
+  // eleventyConfig.addTransform("htmlMinifier", (content, outputPath) => {
+  //   if (
+  //     (process.env.NODE_ENV === "production" || process.env.ELEVENTY_ENV === "prod") &&
+  //     outputPath &&
+  //     outputPath.endsWith(".html")
+  //   ) {
+  //     return htmlMinifier.minify(content, {
+  //       useShortDoctype: true,
+  //       removeComments: true,
+  //       collapseWhitespace: true,
+  //       conservativeCollapse: true,
+  //       preserveLineBreaks: true,
+  //       minifyCSS: true,
+  //       minifyJS: true,
+  //       keepClosingSlash: true,
+  //     });
+  //   }
+  //   return content;
+  // });
 
   eleventyConfig.addPassthroughCopy("src/site/img");
   eleventyConfig.addPassthroughCopy("src/site/scripts");

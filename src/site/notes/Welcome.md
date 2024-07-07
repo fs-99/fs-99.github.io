@@ -3,3 +3,7 @@
 ---
 
 We will win.
+
+```rust
+let test = Some(42);
+```

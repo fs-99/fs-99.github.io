@@ -621,7 +621,7 @@ body {
     --font-monospace-theme: '??';
     --font-monospace: var(--font-monospace-override), var(--font-monospace-theme), var(--font-monospace-default);
     --font-text-size: 16px;
-    --font-mermaid: var(--font-text);
+    // --font-mermaid: var(--font-text);
   }
   @media print {
     html,
@@ -1547,7 +1547,7 @@ body {
   }
   body.is-frameless:not(.is-hidden-frameless) .titlebar {
     height: var(--titlebar-height);
-    zoom: calc(1 / var(--zoom-factor));
+    // zoom: calc(1 / var(--zoom-factor));
   }
   body.is-frameless:not(.is-hidden-frameless):not(.is-maximized) .titlebar {
     padding-top: 2px;

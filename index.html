@@ -255,7 +255,7 @@
     async function init() {
         //init offline search index
 
-        const searchIndexDate = '2024-07-07T11:19:40.905Z';
+        const searchIndexDate = '2024-07-07T12:27:07.403Z';
         let shouldFetch = true;
         if(localStorage.getItem("searchIndex")) {
             let {date, docs}= JSON.parse(localStorage.getItem('searchIndex'));
@@ -267,9 +267,9 @@
             }        
         }
         if(shouldFetch){
-            let docs = await(await fetch('/searchIndex.json?v=2024-07-07T11:19:40.905Z')).json();
+            let docs = await(await fetch('/searchIndex.json?v=2024-07-07T12:27:07.403Z')).json();
             let index = createIndex(docs);
-            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-07-07T11:19:40.905Z', docs}));
+            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-07-07T12:27:07.403Z', docs}));
             window.docs = docs
             window.index = index;
         }
@@ -512,6 +512,7 @@
       <p>We will win.</p>
 <pre><code class="language-rust">let test = Some(42);
 </code></pre>
+<p>a</p>
 
       
       

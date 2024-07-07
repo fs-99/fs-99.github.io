@@ -1,9 +1,9 @@
 [
 {
 		"title": "Welcome",
-		"date":"Sat Jul 06 2024 19:47:34 GMT+0000 (Coordinated Universal Time)",
+		"date":"Sun Jul 07 2024 11:19:31 GMT+0000 (Coordinated Universal Time)",
 		"url":"/",
-		"content": "We will win.",
+		"content": "We will win.\nlet test = Some(42);",
 		"tags": [ "note","gardenEntry"]
 }
 ]

@@ -112,14 +112,14 @@ module.exports = function (eleventyConfig) {
         return '<a class="tag" onclick="toggleTagSearch(this)">';
       };
     })
-    .use(require("markdown-it-mathjax3"), {
-      tex: {
-        inlineMath: [["$", "$"]],
-      },
-      options: {
-        skipHtmlTags: { "[-]": ["pre"] },
-      },
-    })
+    // .use(require("markdown-it-mathjax3"), {
+    //   tex: {
+    //     inlineMath: [["$", "$"]],
+    //   },
+    //   options: {
+    //     skipHtmlTags: { "[-]": ["pre"] },
+    //   },
+    // })
     .use(require("markdown-it-attrs"))
     .use(require("markdown-it-task-checkbox"), {
       disabled: true,
@@ -129,10 +129,10 @@ module.exports = function (eleventyConfig) {
       ulClass: "task-list",
       liClass: "task-list-item",
     })
-    .use(require("markdown-it-plantuml"), {
-      openMarker: "```plantuml",
-      closeMarker: "```",
-    })
+    // .use(require("markdown-it-plantuml"), {
+    //   openMarker: "```plantuml",
+    //   closeMarker: "```",
+    // })
     .use(namedHeadingsFilter)
     .use(function (md) {
       //https://github.com/DCsunset/markdown-it-mermaid-plugin

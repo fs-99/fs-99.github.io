@@ -1,9 +1,17 @@
 [
 {
-		"title": "Welcome",
-		"date":"Mon Jul 08 2024 17:56:13 GMT+0000 (Coordinated Universal Time)",
+		"title": "Bureaucracy fosters Extremism",
+		"date":"Mon Jul 08 2024 18:23:59 GMT+0000 (Coordinated Universal Time)",
+		"url":"/bureaucracy-fosters-extremism/",
+		"content": "The less powerful you feel, the more power you seek after and the more drastic measures you think of.\nBureaucracy is the system by which power is subverted upwards.\nExtremism is the system by which power is taken forcefully downwards.\nBureaucracy needs order as one big mass.\nExtremism is the small swing back into disorder.\nDo you think this is true?\nWhen does it really trigger someone to act extremism out?",
+		"tags": [ "note"]
+},
+
+{
+		"title": "We will win.",
+		"date":"Mon Jul 08 2024 18:23:59 GMT+0000 (Coordinated Universal Time)",
 		"url":"/",
-		"content": "We will win.\nlet test = Some(42);\n\na",
+		"content": "This is a blog about ideas.\nSome of these might hurt you, some of them might soothe you.\nLatest\n<a class=\"internal-link\" target=\"\" data-note-icon=\"\" href=\"/bureaucracy-fosters-extremism/\">Bureaucracy fosters Extremism</a>",
 		"tags": [ "note","gardenEntry"]
 }
 ]

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>We will win.</title>
+    <title>Bureaucracy fosters Extremism</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <script src="https://cdn.jsdelivr.net/npm/lucide@0.115.0/dist/umd/lucide.min.js"></script>
@@ -69,6 +69,7 @@
   <body class="theme-dark markdown-preview-view markdown-rendered markdown-preview-section ">
     
     
+    
       
     <nav class="navbar">
         <div class="navbar-inner">
@@ -92,6 +93,7 @@
     </nav>
     
     
+
     
       <div class="search-container" id="globalsearch" onclick="toggleSearch()">
     <div class="search-box">
@@ -496,24 +498,26 @@
     }
 </script>
     
+
     <main class="content cm-s-obsidian ">
       <header>
-      
-        <h1></h1>
-      
-
-      <div class="header-meta">
         
-      </div>
+          <h1 data-note-icon="">Bureaucracy fosters Extremism</h1>
+        
+        <div class="header-meta">
+          </div>
       
       
       </header>
       
       
-      <p>This is a blog about ideas.<br>
-Some of these might hurt you, some of them might soothe you.</p>
-<h2 id="latest" tabindex="-1">Latest</h2>
-<p><a class="internal-link" target="" data-note-icon="" href="/bureaucracy-fosters-extremism/">Bureaucracy fosters Extremism</a></p>
+      <p>The less powerful you feel, the more power you seek after and the more drastic measures you think of.<br>
+Bureaucracy is the system by which power is subverted upwards.<br>
+Extremism is the system by which power is taken forcefully downwards.</p>
+<p>Bureaucracy needs <em>order</em> as one big <em><strong>mass</strong></em>.<br>
+Extremism is the <em><strong>small</strong></em> swing back into <em>disorder</em>.</p>
+<p>Do you think this is true?<br>
+When does it really trigger someone to act extremism out?</p>
 
       
       
@@ -909,6 +913,49 @@ Some of these might hurt you, some of them might soothe you.</p>
 </script>
 
     
+        <script>
+      if (window.location.hash) {
+        document.getElementById(window.location.hash.slice(1)).classList.add('referred');
+      }
+      window.addEventListener('hashchange', (evt) => {
+        const oldParts = evt.oldURL.split("#");
+        if (oldParts[1]) {
+          document.getElementById(oldParts[1]).classList.remove('referred');
+        }
+        const newParts = evt.newURL.split("#");
+        if (newParts[1]) {
+          document.getElementById(newParts[1]).classList.add('referred');
+        }
+      }, false);
+      const url_parts = window.location.href.split("#")
+      const url = url_parts[0];
+      const referrence = url_parts[1];
+      document.querySelectorAll(".cm-s-obsidian > *[id]").forEach(function (el) {
+        el.ondblclick = function(evt) {
+          const ref_url = url + '#' + evt.target.id
+          navigator.clipboard.writeText(ref_url);
+      }
+      });
+
+      
+    </script>
+    <script src=" https://fastly.jsdelivr.net/npm/luxon@3.2.1/build/global/luxon.min.js "></script>
+<script defer>
+  TIMESTAMP_FORMAT = "MMM dd, yyyy h:mm a";
+  document.querySelectorAll('.human-date').forEach(function (el) {
+    date = el.getAttribute('data-date') || el.innerText
+    parsed_date = luxon.DateTime.fromISO(date)
+    if (parsed_date.invalid != null){
+      // Date cannot be parsed
+      parsed_date = luxon.DateTime.fromSQL(date)
+    }
+    if (parsed_date.invalid != null){
+      // Date still cannot be parsed
+      parsed_date = luxon.DateTime.fromHTML(date)
+    }
+    el.innerHTML = parsed_date.toFormat(TIMESTAMP_FORMAT);
+  })
+</script>
     
     
     <script>
@@ -918,5 +965,5 @@ lucide.createIcons({
             }
         });
 </script>
-    </body>
-  </html>
+  </body>
+</html>

@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:base="https://wewillwin.dev">
-    <title>Digital Garden</title>
+    <title>wewillwin</title>
     <link href="https://wewillwin.dev/feed.xml" rel="self" >
     <link href="https://wewillwin.dev" >
-    <updated>2024-07-07T12:31:46Z</updated>
+    <updated>2024-07-08T17:56:20Z</updated>
     <id>https://wewillwin.dev</id>
         <entry>
             <title>
                 Welcome
                 
             </title>
-            <updated>2024-07-07T12:31:33Z</updated>
+            <updated>2024-07-08T17:56:13Z</updated>
             <id>https://wewillwin.dev/</id>
             <content type="html">
                 &lt;p&gt;We will win.&lt;/p&gt;

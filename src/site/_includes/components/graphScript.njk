@@ -184,31 +184,83 @@
         }
         return null;
     }
+
+    const dataInner = { graphData: null, depth: 1, graph: null, fullGraph: null, showFullGraph: false, fullScreen: false, fullGraphData: null };
+    const data = new Proxy(dataInner, {
+        set: function (target, key, value) {
+            target[key] = value;
+            if (key === "fullScreen") {
+                document.getElementById("graph-component").className = value ? 'graph graph-fs' : 'graph';
+            }
+            if (key === "graphData" || key === "depth" || key === "fullScreen") {
+                // NOTE: assumes we keep the target[key] = value line above
+                renderLocalGraph(data.graphData, data.depth, data.fullScreen);
+            }
+            if (key === "showFullGraph") {
+                if (value) {
+                    document.getElementById("full-graph").style.display = "";
+                } else {
+                    document.getElementById("full-graph").style.display = "none";
+                }
+            }
+
+            return true
+        }
+    });
+
+    window.onload = async () => {
+        document.getElementById("graph-depth").value = data.depth;
+        document.getElementById("depth-display").innerText = data.depth;
+        data.fullScreen = false;
+
+        // fetch data
+        const {graphData, fullGraphData} = await fetchGraphData();
+        data.graphData = graphData;
+        data.fullGraphData = fullGraphData;
+
+        // modify data based on events
+        document.getElementById("graph-depth").addEventListener("input", (event) => {
+            let depth = event.target.value;
+            data.depth = Number(depth);
+            document.getElementById("depth-display").innerText = depth;
+        });
+        document.getElementById("global-graph-btn").addEventListener("click", (event) => {
+            data.showFullGraph = true;
+            setTimeout(() => {data.fullGraph = openFullGraph(fullGraphData)}, 100);
+        });
+        document.getElementById("graph-fs-btn").addEventListener("click", (event) => {
+            data.fullScreen = !data.fullScreen
+        });
+        document.getElementById("full-graph-close").addEventListener("click", (event) => {
+            data.fullGraph = closefullGraph(data.fullGraph);
+            data.showFullGraph = false;
+        });
+    }
 </script>
-<div  x-init="{graphData, fullGraphData} = await fetchGraphData();" x-data="{ graphData: null, depth: 1, graph: null, fullGraph: null, showFullGraph: false, fullScreen: false, fullGraphData: null}" id="graph-component" x-bind:class="fullScreen ? 'graph graph-fs' : 'graph'" v-scope>
+<div id="graph-component" v-scope>
     <div class="graph-title-container">
         <div class="graph-title">Connected Pages</div>
         <div id="graph-controls">
                 <div class="depth-control">
                     <label for="graph-depth">Depth</label>
                     <div class="slider">
-                            <input x-model.number="depth" name="graph-depth" list="depthmarkers" type="range" step="1" min="1" max="3" id="graph-depth"/>
+                            <input name="graph-depth" list="depthmarkers" type="range" step="1" min="1" max="3" id="graph-depth"/>
                     <datalist id="depthmarkers">
                             <option value="1" label="1"></option>
                             <option value="2" label="2"></option>
                             <option value="3" label="3"></option>
                     </datalist>
                     </div>
-                    <span id="depth-display" x-text="depth"></span>
+                    <span id="depth-display"></span>
                 </div>
                 <div class="ctrl-right">
-                    <span id="global-graph-btn" x-on:click="showFullGraph = true; setTimeout(() => {fullGraph = openFullGraph(fullGraphData)}, 100)"><i  icon-name="globe" aria-hidden="true"></i></span>
-                    <span  id="graph-fs-btn"  x-on:click="fullScreen = !fullScreen"><i  icon-name="expand" aria-hidden="true"></i></span>
+                    <span id="global-graph-btn"><i  icon-name="globe" aria-hidden="true"></i></span>
+                    <span id="graph-fs-btn"><i  icon-name="expand" aria-hidden="true"></i></span>
                 </div>
         </div>
     </div>
-    <div x-effect="renderLocalGraph(graphData, depth, fullScreen)" id="link-graph" ></div>
-    <div x-show="showFullGraph" id="full-graph" class="show" style="display: none;">
-        <span id="full-graph-close" x-on:click="fullGraph = closefullGraph(fullGraph); showFullGraph = false;"><i icon-name="x" aria-hidden="true"></i></span><div id="full-graph-container"></div>
+    <div id="link-graph" ></div>
+    <div id="full-graph" class="show" style="display: none;">
+        <span id="full-graph-close"><i icon-name="x" aria-hidden="true"></i></span><div id="full-graph-container"></div>
     </div>
 </div>

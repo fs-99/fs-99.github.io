@@ -29,10 +29,10 @@
         let currentLink = decodeURI(window.location.pathname);
         let currentNode = remaining[currentLink] || Object.values(remaining).find((v) => v.home);
         delete remaining[currentNode.url];
-        if (!currentNode.home) {
-            let home = Object.values(remaining).find((v) => v.home);
-            delete remaining[home.url];
-        }
+        // if (!currentNode.home) {
+        //     let home = Object.values(remaining).find((v) => v.home);
+        //     delete remaining[home.url];
+        // }
         currentNode.current = true;
         let existing = {};
         existing[currentNode.url] = currentNode;
@@ -40,9 +40,9 @@
             existing, remaining = getNextLevelNeighbours(existing, remaining);
         }
         nodes = Object.values(existing);
-        if (!currentNode.home) {
-            nodes = nodes.filter(n => !n.home);
-        }
+        // if (!currentNode.home) {
+        //     nodes = nodes.filter(n => !n.home);
+        // }
         let ids = nodes.map((n) => n.id);
         return {
             nodes,
@@ -58,6 +58,10 @@
         var doc = new DOMParser().parseFromString(input, "text/html");
         return doc.documentElement.textContent;
     }
+    let homeMarker = new Image();
+    // see: https://icon-sets.iconify.design/lucide/home/
+    // color is this btw: #BB9AF7
+    homeMarker.src = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAADP0lEQVRYR8VXS04bQRCtmg+2swk5QcgJ4pwAkILX9gmCFwFFURQ4AXACiLKIgAXkBLaUHUQyrLLEuYHZR4qjSLFje6bzuntmPDPM1yiiV2NPT/erV+9VVzM98OBF9785E8s/JqM9Mogsq3aw3ubhImstBKD3abQyNUWHietELgnivu1wa/1NbVAWRGkAX4//NgU7Z8S8jJ1DQwxZmO2X25VuGRClAFwej/aJac/fAPtfy2cmsQpA/t/7G69rB0VBFALQQ75n03HHIVoz57sfbGzX9uXPODBk5cqqVFtFdJEL4OJkUifhdBDgitpb0C8mYzNOtUoNueeg47GaJmhAM7PVeLvUz2IjE8DFyWgTE86CoIX4brvcTBPbN4jztyG6zPw8lKZ2Y6t2ngYiEYCkfDodH+LlZrAQ02fbqu7k0aq+nYyPwNirEIhz267uJn17B0BgMRcWg8c165QZRVJ0mj0X7MlF0q0aARBYjGAxPW4Fmc3GVnYe0+iV+mFypC2fyjmAMTRjVg0AeJNvQrRdg7ZmHuVZApPvvHR2sdGqmosHIcwXflABgMvT0Rq47mnKxYfG1qOdvMXLvL84+XOEyvneA7GOWnHl4dHLhAEAZTChzCZZc9PWT2QgDYAWqM5n2rAduk2y6b0BRDTiwhdGWL8u8HiWwZPl0LM4iHwAH6GBitZAEgORBfLykpDCfAAQIQLrybhQRO5o4PL0J0Ra1QAF75IhoiVW1g0Wh4UCCK1fWAN5Ip2/R3qYEwKYuyzMcBQAbKvO+BIU+tkoDjC6/n9goEgAFhiyo3XgCzRQhQYUAQsxMIVGZsVEnKQBH0CWiKRIldkWAlhEA14pTtygjE2zAMqkj+GydyVLsS8yVXIehIHQYZWaAsftkYEklQCY6AIWRive8y1qM9+mutdwO3GNJdtQiK61VGuHe4FyAMaw2RNlMzlUVz0ZybtEMxWAmjQbD1CIVFebOrxzx7+T5LbV/kL+eYWuGu2833HJ/mQ+4l1wGojI2Rc9CL1PdDmN7y1/x/vLOwGoY1c4TRwsddz5AqTa/rgboOEXzAMiXFMouKZ4zOq7AzbB+/nAzWmIj/qCzW68vyzMYGZa7vHyH+UuPz8c4wZRAAAAAElFTkSuQmCC";
 
     function renderGraph(graphData, id, delay, fullScreen) {
         if (graphData == null) {
@@ -88,9 +92,9 @@
                     return color;
                 }
                 if (link.source.id == hoverNode.id || link.target.id == hoverNode.id) {
-                    return color;
-                } else {
                     return mutedColor;
+                } else {
+                    return color;
                 }
                 
             })
@@ -104,20 +108,31 @@
                     ctx.fillStyle = color;
                 } else {
                     if (node == hoverNode || highlightNodes.has(node.url)) {
-                        ctx.fillStyle = color;
-                    } else {
                         ctx.fillStyle = mutedColor;
+                    } else {
+                        ctx.fillStyle = color;
                     }
                 }
-                 
-                ctx.fill();
+                
+                if (!node.home) {
+                    ctx.fill();
+                }
                 
                 if (node.current) {
                     ctx.beginPath();
                     ctx.arc(node.x, node.y, nodeR + 1, 0, 2 * Math.PI, false);
                     ctx.lineWidth = 0.5;
-                    ctx.strokeStyle = color;
+                    ctx.strokeStyle = "#fafafa";
+                    ctx.fillStyle = "#fafafa";
                     ctx.stroke();
+                }
+
+                if (node.home) {
+                    ctx.beginPath();
+                    let width = 5;
+                    let height = 5;
+                    // NOTE: homeMarker must have loaded by now
+                    ctx.drawImage(homeMarker, node.x - width/2, node.y - height/2, width, height);
                 }
 
                 const label = htmlDecode(node.title)

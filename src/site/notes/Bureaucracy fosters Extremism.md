@@ -12,3 +12,7 @@ Extremism is the ***small*** swing back into *disorder*.
 
 Do you think this is true?
 When does it really trigger someone to act extremism out?
+
+
+related:
+https://warontherocks.com/2021/02/bureaucratizing-to-fight-extremism-in-the-military/

@@ -8,4 +8,5 @@ Some of these might hurt you, some of them might soothe you.
 
 ## Latest
 
+[[The Anti-Hierarchy\|The Anti-Hierarchy]]
 [[Bureaucracy fosters Extremism\|Bureaucracy fosters Extremism]]

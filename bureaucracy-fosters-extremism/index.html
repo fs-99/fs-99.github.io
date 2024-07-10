@@ -253,7 +253,7 @@
     async function init() {
         //init offline search index
 
-        const searchIndexDate = '2024-07-09T09:35:14.446Z';
+        const searchIndexDate = '2024-07-10T17:49:38.544Z';
         let shouldFetch = true;
         if(localStorage.getItem("searchIndex")) {
             let {date, docs}= JSON.parse(localStorage.getItem('searchIndex'));
@@ -265,9 +265,9 @@
             }        
         }
         if(shouldFetch){
-            let docs = await(await fetch('/searchIndex.json?v=2024-07-09T09:35:14.446Z')).json();
+            let docs = await(await fetch('/searchIndex.json?v=2024-07-10T17:49:38.544Z')).json();
             let index = createIndex(docs);
-            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-07-09T09:35:14.446Z', docs}));
+            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-07-10T17:49:38.544Z', docs}));
             window.docs = docs
             window.index = index;
         }
@@ -515,6 +515,8 @@ Extremism is the system by which power is taken forcefully downwards.</p>
 Extremism is the <em><strong>small</strong></em> swing back into <em>disorder</em>.</p>
 <p>Do you think this is true?<br>
 When does it really trigger someone to act extremism out?</p>
+<p>related:<br>
+<a href="https://warontherocks.com/2021/02/bureaucratizing-to-fight-extremism-in-the-military/" target="_blank" class="external-link">https://warontherocks.com/2021/02/bureaucratizing-to-fight-extremism-in-the-military/</a></p>
 
 
       

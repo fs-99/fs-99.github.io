@@ -10,7 +10,7 @@ Some of these might hurt you, some of them might soothe you.
 
 ## Latest
 
-[Silly con valley]
+[[Silly con valley\|Silly con valley]]
 [[There is no free time\|There is no free time]]
 [[The Anti-Hierarchy\|The Anti-Hierarchy]]
 [[Bureaucracy fosters Extremism\|Bureaucracy fosters Extremism]]

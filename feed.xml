@@ -3,20 +3,22 @@
     <title>wewillwin</title>
     <link href="https://wewillwin.dev/feed.xml" rel="self" >
     <link href="https://wewillwin.dev" >
-    <updated>2024-07-10T17:49:38Z</updated>
+    <updated>2024-07-12T17:43:29Z</updated>
     <id>https://wewillwin.dev</id>
         <entry>
             <title>
                 We will win.
                 
             </title>
-            <updated>2024-07-10T17:49:31Z</updated>
+            <updated>2024-07-12T17:43:23Z</updated>
             <id>https://wewillwin.dev/</id>
             <content type="html">
                 &lt;p&gt;This is a blog about ideas.&lt;br /&gt;
 Some of these might hurt you, some of them might soothe you.&lt;/p&gt;
+&lt;p&gt;(Yes, there will be more optimistic notes soon.)&lt;/p&gt;
 &lt;h2 id=&quot;latest&quot; tabindex=&quot;-1&quot;&gt;Latest&lt;/h2&gt;
-&lt;p&gt;&lt;a class=&quot;internal-link&quot; target=&quot;&quot; data-note-icon=&quot;&quot; href=&quot;https://wewillwin.dev/the-anti-hierarchy/&quot;&gt;The Anti-Hierarchy&lt;/a&gt;&lt;br /&gt;
+&lt;p&gt;&lt;a class=&quot;internal-link&quot; target=&quot;&quot; data-note-icon=&quot;&quot; href=&quot;https://wewillwin.dev/there-is-no-free-time/&quot;&gt;There is no free time&lt;/a&gt;&lt;br /&gt;
+&lt;a class=&quot;internal-link&quot; target=&quot;&quot; data-note-icon=&quot;&quot; href=&quot;https://wewillwin.dev/the-anti-hierarchy/&quot;&gt;The Anti-Hierarchy&lt;/a&gt;&lt;br /&gt;
 &lt;a class=&quot;internal-link&quot; target=&quot;&quot; data-note-icon=&quot;&quot; href=&quot;https://wewillwin.dev/bureaucracy-fosters-extremism/&quot;&gt;Bureaucracy fosters Extremism&lt;/a&gt;&lt;/p&gt;
 
             </content>
@@ -24,10 +26,34 @@ Some of these might hurt you, some of them might soothe you.&lt;/p&gt;
         </entry>
         <entry>
             <title>
+                There is no free time
+                
+            </title>
+            <updated>2024-07-12T17:43:23Z</updated>
+            <id>https://wewillwin.dev/there-is-no-free-time/</id>
+            <content type="html">
+                &lt;p&gt;There is only &lt;em&gt;time&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;As a concept, &lt;em&gt;&amp;quot;free time&amp;quot;&lt;/em&gt; is kind of weird.&lt;br /&gt;
+It sounds like work then is &lt;em&gt;&amp;quot;jail time&amp;quot;&lt;/em&gt;.&lt;br /&gt;
+It also implies that work has to be shitty. I wonder how much of this notion can be put away if we really like the work we are doing and specifically take effort into shaping the kind of work we do. If you think of any cookie-cutter entrepreneur, they will most likely tell you something similar.&lt;br /&gt;
+Of course, this is not always possible, but I still wonder how it could be reformulated.&lt;/p&gt;
+&lt;p&gt;There is something to be said about &lt;strong&gt;responsibilities&lt;/strong&gt; vs. &lt;strong&gt;rights&lt;/strong&gt;, since free time is or should be a right, while work is generally seen as a responsibility.&lt;/p&gt;
+&lt;p&gt;Another similar dichotomy is between &lt;em&gt;&lt;strong&gt;work&lt;/strong&gt;&lt;/em&gt; and &lt;em&gt;&lt;strong&gt;play&lt;/strong&gt;&lt;/em&gt;, which generalizes a bit more. A &amp;quot;right to play&amp;quot; sounds interesting.&lt;/p&gt;
+&lt;p&gt;Also, play can earn you money and the more (longer!) you focus in on some play, the more opportunity to earn money from it.&lt;br /&gt;
+(I will write some more about work/play later, but I basically mean play as passion)&lt;/p&gt;
+&lt;p&gt;This gives us one observation:&lt;/p&gt;
+&lt;p&gt;The rich who &amp;quot;made it&amp;quot; can pretty much &lt;em&gt;play&lt;/em&gt; all the time, since they can lose for far longer. This is why you will hear some say you should just follow your passion. It might be that they can&#39;t see or remember how it feels like to have to &lt;em&gt;work&lt;/em&gt; in terms of responsibility.&lt;br /&gt;
+I might be wrong about that though, since a lot of the rich are leaders with tons of responsibility.&lt;/p&gt;
+
+            </content>
+            <link href="https://wewillwin.dev/there-is-no-free-time/" >
+        </entry>
+        <entry>
+            <title>
                 The Anti-Hierarchy
                 
             </title>
-            <updated>2024-07-10T17:49:31Z</updated>
+            <updated>2024-07-12T17:43:23Z</updated>
             <id>https://wewillwin.dev/the-anti-hierarchy/</id>
             <content type="html">
                 &lt;p&gt;Serotonin marks our place in the dominance (competence) hierarchy.&lt;br /&gt;
@@ -45,7 +71,7 @@ If everyone were getting more and more depressed, using anti-depressants (and dr
                 Bureaucracy fosters Extremism
                 
             </title>
-            <updated>2024-07-10T17:49:31Z</updated>
+            <updated>2024-07-12T17:43:23Z</updated>
             <id>https://wewillwin.dev/bureaucracy-fosters-extremism/</id>
             <content type="html">
                 &lt;p&gt;The less powerful you feel, the more power you seek after and the more drastic measures you think of.&lt;br /&gt;

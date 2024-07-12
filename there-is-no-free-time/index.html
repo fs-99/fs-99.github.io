@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>We will win.</title>
+    <title>There is no free time</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <script src="https://cdn.jsdelivr.net/npm/lucide@0.115.0/dist/umd/lucide.min.js"></script>
@@ -66,6 +66,7 @@
   <body class="theme-dark markdown-preview-view markdown-rendered markdown-preview-section ">
     
     
+    
       
     <nav class="navbar">
         <div class="navbar-inner">
@@ -89,6 +90,7 @@
     </nav>
     
     
+
     
       <div class="search-container" id="globalsearch" onclick="toggleSearch()">
     <div class="search-box">
@@ -493,27 +495,52 @@
     }
 </script>
     
+
     <main class="content cm-s-obsidian ">
       <header>
-      
-        <h1></h1>
-      
-
-      <div class="header-meta">
         
-      </div>
+          <h1 data-note-icon="">There is no free time</h1>
+        
+        <div class="header-meta">
+          </div>
       
       
       </header>
       
       
-      <p>This is a blog about ideas.<br>
-Some of these might hurt you, some of them might soothe you.</p>
-<p>(Yes, there will be more optimistic notes soon.)</p>
-<h2 id="latest" tabindex="-1">Latest</h2>
-<p><a class="internal-link" target="" data-note-icon="" href="/there-is-no-free-time/">There is no free time</a><br>
-<a class="internal-link" target="" data-note-icon="" href="/the-anti-hierarchy/">The Anti-Hierarchy</a><br>
-<a class="internal-link" target="" data-note-icon="" href="/bureaucracy-fosters-extremism/">Bureaucracy fosters Extremism</a></p>
+      <p>There is only <em>time</em>.</p>
+<p>As a concept, <em>&quot;free time&quot;</em> is kind of weird.<br>
+It sounds like work then is <em>&quot;jail time&quot;</em>.<br>
+It also implies that work has to be shitty. I wonder how much of this notion can be put away if we really like the work we are doing and specifically take effort into shaping the kind of work we do. If you think of any cookie-cutter entrepreneur, they will most likely tell you something similar.<br>
+Of course, this is not always possible, but I still wonder how it could be reformulated.</p>
+<p>There is something to be said about <strong>responsibilities</strong> vs. <strong>rights</strong>, since free time is or should be a right, while work is generally seen as a responsibility.</p>
+<p>Another similar dichotomy is between <em><strong>work</strong></em> and <em><strong>play</strong></em>, which generalizes a bit more. A &quot;right to play&quot; sounds interesting.</p>
+<p>Also, play can earn you money and the more (longer!) you focus in on some play, the more opportunity to earn money from it.<br>
+(I will write some more about work/play later, but I basically mean play as passion)</p>
+<p>This gives us one observation:</p>
+<p>The rich who &quot;made it&quot; can pretty much <em>play</em> all the time, since they can lose for far longer. This is why you will hear some say you should just follow your passion. It might be that they can't see or remember how it feels like to have to <em>work</em> in terms of responsibility.<br>
+I might be wrong about that though, since a lot of the rich are leaders with tons of responsibility.</p>
+
+
+      
+      <div class="giscus"></div>
+  
+      
+      <script src="https://giscus.app/client.js"
+        data-repo="fs-99/fs-99.github.io"
+        data-repo-id="R_kgDOMS2qyg"
+        data-category="General"
+        data-category-id="DIC_kwDOMS2qys4Cgpsj"
+        data-mapping="title"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="dark"
+        data-lang="en"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async></script>
 
       
       
@@ -976,6 +1003,49 @@ Some of these might hurt you, some of them might soothe you.</p>
 </script>
 
     
+        <script>
+      if (window.location.hash) {
+        document.getElementById(window.location.hash.slice(1)).classList.add('referred');
+      }
+      window.addEventListener('hashchange', (evt) => {
+        const oldParts = evt.oldURL.split("#");
+        if (oldParts[1]) {
+          document.getElementById(oldParts[1]).classList.remove('referred');
+        }
+        const newParts = evt.newURL.split("#");
+        if (newParts[1]) {
+          document.getElementById(newParts[1]).classList.add('referred');
+        }
+      }, false);
+      const url_parts = window.location.href.split("#")
+      const url = url_parts[0];
+      const referrence = url_parts[1];
+      document.querySelectorAll(".cm-s-obsidian > *[id]").forEach(function (el) {
+        el.ondblclick = function(evt) {
+          const ref_url = url + '#' + evt.target.id
+          navigator.clipboard.writeText(ref_url);
+      }
+      });
+
+      
+    </script>
+    <script src=" https://fastly.jsdelivr.net/npm/luxon@3.2.1/build/global/luxon.min.js "></script>
+<script defer>
+  TIMESTAMP_FORMAT = "MMM dd, yyyy h:mm a";
+  document.querySelectorAll('.human-date').forEach(function (el) {
+    date = el.getAttribute('data-date') || el.innerText
+    parsed_date = luxon.DateTime.fromISO(date)
+    if (parsed_date.invalid != null){
+      // Date cannot be parsed
+      parsed_date = luxon.DateTime.fromSQL(date)
+    }
+    if (parsed_date.invalid != null){
+      // Date still cannot be parsed
+      parsed_date = luxon.DateTime.fromHTML(date)
+    }
+    el.innerHTML = parsed_date.toFormat(TIMESTAMP_FORMAT);
+  })
+</script>
     
     
     <script>
@@ -985,5 +1055,5 @@ lucide.createIcons({
             }
         });
 </script>
-    </body>
-  </html>
+  </body>
+</html>

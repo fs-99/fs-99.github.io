@@ -3,21 +3,22 @@
     <title>wewillwin</title>
     <link href="https://wewillwin.dev/feed.xml" rel="self" >
     <link href="https://wewillwin.dev" >
-    <updated>2024-07-12T17:43:29Z</updated>
+    <updated>2024-07-12T19:36:04Z</updated>
     <id>https://wewillwin.dev</id>
         <entry>
             <title>
                 We will win.
                 
             </title>
-            <updated>2024-07-12T17:43:23Z</updated>
+            <updated>2024-07-12T19:35:56Z</updated>
             <id>https://wewillwin.dev/</id>
             <content type="html">
                 &lt;p&gt;This is a blog about ideas.&lt;br /&gt;
 Some of these might hurt you, some of them might soothe you.&lt;/p&gt;
 &lt;p&gt;(Yes, there will be more optimistic notes soon.)&lt;/p&gt;
 &lt;h2 id=&quot;latest&quot; tabindex=&quot;-1&quot;&gt;Latest&lt;/h2&gt;
-&lt;p&gt;&lt;a class=&quot;internal-link&quot; target=&quot;&quot; data-note-icon=&quot;&quot; href=&quot;https://wewillwin.dev/there-is-no-free-time/&quot;&gt;There is no free time&lt;/a&gt;&lt;br /&gt;
+&lt;p&gt;[Silly con valley]&lt;br /&gt;
+&lt;a class=&quot;internal-link&quot; target=&quot;&quot; data-note-icon=&quot;&quot; href=&quot;https://wewillwin.dev/there-is-no-free-time/&quot;&gt;There is no free time&lt;/a&gt;&lt;br /&gt;
 &lt;a class=&quot;internal-link&quot; target=&quot;&quot; data-note-icon=&quot;&quot; href=&quot;https://wewillwin.dev/the-anti-hierarchy/&quot;&gt;The Anti-Hierarchy&lt;/a&gt;&lt;br /&gt;
 &lt;a class=&quot;internal-link&quot; target=&quot;&quot; data-note-icon=&quot;&quot; href=&quot;https://wewillwin.dev/bureaucracy-fosters-extremism/&quot;&gt;Bureaucracy fosters Extremism&lt;/a&gt;&lt;/p&gt;
 
@@ -29,7 +30,7 @@ Some of these might hurt you, some of them might soothe you.&lt;/p&gt;
                 There is no free time
                 
             </title>
-            <updated>2024-07-12T17:43:23Z</updated>
+            <updated>2024-07-12T19:35:56Z</updated>
             <id>https://wewillwin.dev/there-is-no-free-time/</id>
             <content type="html">
                 &lt;p&gt;There is only &lt;em&gt;time&lt;/em&gt;.&lt;/p&gt;
@@ -44,6 +45,7 @@ Of course, this is not always possible, but I still wonder how it could be refor
 &lt;p&gt;This gives us one observation:&lt;/p&gt;
 &lt;p&gt;The rich who &amp;quot;made it&amp;quot; can pretty much &lt;em&gt;play&lt;/em&gt; all the time, since they can lose for far longer. This is why you will hear some say you should just follow your passion. It might be that they can&#39;t see or remember how it feels like to have to &lt;em&gt;work&lt;/em&gt; in terms of responsibility.&lt;br /&gt;
 I might be wrong about that though, since a lot of the rich are leaders with tons of responsibility.&lt;/p&gt;
+&lt;p&gt;TODO: &amp;quot;you don&#39;t have time, you take your time&amp;quot;&lt;/p&gt;
 
             </content>
             <link href="https://wewillwin.dev/there-is-no-free-time/" >
@@ -53,7 +55,7 @@ I might be wrong about that though, since a lot of the rich are leaders with ton
                 The Anti-Hierarchy
                 
             </title>
-            <updated>2024-07-12T17:43:23Z</updated>
+            <updated>2024-07-12T19:35:56Z</updated>
             <id>https://wewillwin.dev/the-anti-hierarchy/</id>
             <content type="html">
                 &lt;p&gt;Serotonin marks our place in the dominance (competence) hierarchy.&lt;br /&gt;
@@ -68,10 +70,28 @@ If everyone were getting more and more depressed, using anti-depressants (and dr
         </entry>
         <entry>
             <title>
+                Silly con valley
+                
+            </title>
+            <updated>2024-07-12T19:35:56Z</updated>
+            <id>https://wewillwin.dev/silly-con-valley/</id>
+            <content type="html">
+                &lt;p&gt;After many years of innovation, Silicon Valley has turned to shit.&lt;br /&gt;
+It is now filled with con-artists and people who trust those naively.&lt;/p&gt;
+&lt;p&gt;related:&lt;br /&gt;
+&lt;a href=&quot;https://www.businessinsider.com/venture-capital-big-tech-antitrust-predatory-pricing-uber-wework-bird-2023-7&quot; target=&quot;_blank&quot; class=&quot;external-link&quot;&gt;https://www.businessinsider.com/venture-capital-big-tech-antitrust-predatory-pricing-uber-wework-bird-2023-7&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://www.wired.com/story/why-silicon-valley-falls-for-frauds/&quot; target=&quot;_blank&quot; class=&quot;external-link&quot;&gt;https://www.wired.com/story/why-silicon-valley-falls-for-frauds/&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://www.nytimes.com/2023/04/15/business/silicon-valley-fraud.html&quot; target=&quot;_blank&quot; class=&quot;external-link&quot;&gt;https://www.nytimes.com/2023/04/15/business/silicon-valley-fraud.html&lt;/a&gt;&lt;/p&gt;
+
+            </content>
+            <link href="https://wewillwin.dev/silly-con-valley/" >
+        </entry>
+        <entry>
+            <title>
                 Bureaucracy fosters Extremism
                 
             </title>
-            <updated>2024-07-12T17:43:23Z</updated>
+            <updated>2024-07-12T19:35:56Z</updated>
             <id>https://wewillwin.dev/bureaucracy-fosters-extremism/</id>
             <content type="html">
                 &lt;p&gt;The less powerful you feel, the more power you seek after and the more drastic measures you think of.&lt;br /&gt;

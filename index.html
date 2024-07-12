@@ -251,7 +251,7 @@
     async function init() {
         //init offline search index
 
-        const searchIndexDate = '2024-07-12T17:43:29.863Z';
+        const searchIndexDate = '2024-07-12T19:36:04.127Z';
         let shouldFetch = true;
         if(localStorage.getItem("searchIndex")) {
             let {date, docs}= JSON.parse(localStorage.getItem('searchIndex'));
@@ -263,9 +263,9 @@
             }        
         }
         if(shouldFetch){
-            let docs = await(await fetch('/searchIndex.json?v=2024-07-12T17:43:29.863Z')).json();
+            let docs = await(await fetch('/searchIndex.json?v=2024-07-12T19:36:04.127Z')).json();
             let index = createIndex(docs);
-            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-07-12T17:43:29.863Z', docs}));
+            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-07-12T19:36:04.127Z', docs}));
             window.docs = docs
             window.index = index;
         }
@@ -511,7 +511,8 @@
 Some of these might hurt you, some of them might soothe you.</p>
 <p>(Yes, there will be more optimistic notes soon.)</p>
 <h2 id="latest" tabindex="-1">Latest</h2>
-<p><a class="internal-link" target="" data-note-icon="" href="/there-is-no-free-time/">There is no free time</a><br>
+<p>[Silly con valley]<br>
+<a class="internal-link" target="" data-note-icon="" href="/there-is-no-free-time/">There is no free time</a><br>
 <a class="internal-link" target="" data-note-icon="" href="/the-anti-hierarchy/">The Anti-Hierarchy</a><br>
 <a class="internal-link" target="" data-note-icon="" href="/bureaucracy-fosters-extremism/">Bureaucracy fosters Extremism</a></p>
 

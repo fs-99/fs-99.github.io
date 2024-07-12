@@ -22,3 +22,7 @@ This gives us one observation:
 
 The rich who "made it" can pretty much *play* all the time, since they can lose for far longer. This is why you will hear some say you should just follow your passion. It might be that they can't see or remember how it feels like to have to _work_ in terms of responsibility.
 I might be wrong about that though, since a lot of the rich are leaders with tons of responsibility.
+
+
+
+TODO: "you don't have time, you take your time"

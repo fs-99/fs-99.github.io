@@ -10,6 +10,7 @@ Some of these might hurt you, some of them might soothe you.
 
 ## Latest
 
+[[No, Discord, I am not chilling\|No, Discord, I am not chilling]]
 [[Silly con valley\|Silly con valley]]
 [[There is no free time\|There is no free time]]
 [[The Anti-Hierarchy\|The Anti-Hierarchy]]

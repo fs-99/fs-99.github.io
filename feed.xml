@@ -3,21 +3,22 @@
     <title>wewillwin</title>
     <link href="https://wewillwin.dev/feed.xml" rel="self" >
     <link href="https://wewillwin.dev" >
-    <updated>2024-07-16T16:54:12Z</updated>
+    <updated>2025-03-28T23:32:23Z</updated>
     <id>https://wewillwin.dev</id>
         <entry>
             <title>
                 We will win.
                 
             </title>
-            <updated>2024-07-16T16:54:05Z</updated>
+            <updated>2025-03-28T23:32:16Z</updated>
             <id>https://wewillwin.dev/</id>
             <content type="html">
                 &lt;p&gt;This is a blog about ideas.&lt;br /&gt;
 Some of these might hurt you, some of them might soothe you.&lt;/p&gt;
 &lt;p&gt;(Yes, there will be more optimistic notes soon.)&lt;/p&gt;
 &lt;h2 id=&quot;latest&quot; tabindex=&quot;-1&quot;&gt;Latest&lt;/h2&gt;
-&lt;p&gt;&lt;a class=&quot;internal-link&quot; target=&quot;&quot; data-note-icon=&quot;&quot; href=&quot;https://wewillwin.dev/no-discord-i-am-not-chilling/&quot;&gt;No, Discord, I am not chilling&lt;/a&gt;&lt;br /&gt;
+&lt;p&gt;&lt;a class=&quot;internal-link&quot; target=&quot;&quot; data-note-icon=&quot;&quot; href=&quot;https://wewillwin.dev/rescuing-is-about-planning/&quot;&gt;Rescuing is about planning&lt;/a&gt;&lt;br /&gt;
+&lt;a class=&quot;internal-link&quot; target=&quot;&quot; data-note-icon=&quot;&quot; href=&quot;https://wewillwin.dev/no-discord-i-am-not-chilling/&quot;&gt;No, Discord, I am not chilling&lt;/a&gt;&lt;br /&gt;
 &lt;a class=&quot;internal-link&quot; target=&quot;&quot; data-note-icon=&quot;&quot; href=&quot;https://wewillwin.dev/silly-con-valley/&quot;&gt;Silly con valley&lt;/a&gt;&lt;br /&gt;
 &lt;a class=&quot;internal-link&quot; target=&quot;&quot; data-note-icon=&quot;&quot; href=&quot;https://wewillwin.dev/there-is-no-free-time/&quot;&gt;There is no free time&lt;/a&gt;&lt;br /&gt;
 &lt;a class=&quot;internal-link&quot; target=&quot;&quot; data-note-icon=&quot;&quot; href=&quot;https://wewillwin.dev/the-anti-hierarchy/&quot;&gt;The Anti-Hierarchy&lt;/a&gt;&lt;br /&gt;
@@ -31,7 +32,7 @@ Some of these might hurt you, some of them might soothe you.&lt;/p&gt;
                 There is no free time
                 
             </title>
-            <updated>2024-07-16T16:54:05Z</updated>
+            <updated>2025-03-28T23:32:16Z</updated>
             <id>https://wewillwin.dev/there-is-no-free-time/</id>
             <content type="html">
                 &lt;p&gt;There is only &lt;em&gt;time&lt;/em&gt;.&lt;/p&gt;
@@ -56,7 +57,7 @@ I might be wrong about that though, since a lot of the rich are leaders with ton
                 The Anti-Hierarchy
                 
             </title>
-            <updated>2024-07-16T16:54:05Z</updated>
+            <updated>2025-03-28T23:32:16Z</updated>
             <id>https://wewillwin.dev/the-anti-hierarchy/</id>
             <content type="html">
                 &lt;p&gt;Serotonin marks our place in the dominance (competence) hierarchy.&lt;br /&gt;
@@ -74,7 +75,7 @@ If everyone were getting more and more depressed, using anti-depressants (and dr
                 Silly con valley
                 
             </title>
-            <updated>2024-07-16T16:54:05Z</updated>
+            <updated>2025-03-28T23:32:16Z</updated>
             <id>https://wewillwin.dev/silly-con-valley/</id>
             <content type="html">
                 &lt;p&gt;After many years of innovation, Silicon Valley has turned to shit.&lt;br /&gt;
@@ -89,10 +90,58 @@ It is now filled with con-artists and people who trust those naively.&lt;/p&gt;
         </entry>
         <entry>
             <title>
+                Rescuing is about planning
+                
+            </title>
+            <updated>2025-03-28T23:32:16Z</updated>
+            <id>https://wewillwin.dev/rescuing-is-about-planning/</id>
+            <content type="html">
+                &lt;p&gt;Do you think you can rescue the world without planning?&lt;/p&gt;
+&lt;p&gt;Would you try to rescue your family without a plan in which you are confident is the best possible one?&lt;br /&gt;
+The one with the best weights, not hurting your family, not costing everything you have, not taking too long (the longer the implementation of a plan takes, the more possible risks of chaos stepping in)?&lt;/p&gt;
+&lt;p&gt;You definitely need a plan. And planning is about experimentation at low cost, to gain experience. If you don&#39;t have time, you hire someone who already has that experience.&lt;/p&gt;
+&lt;p&gt;Software in a development state has low costs.&lt;br /&gt;
+Prototypes have low cost.&lt;br /&gt;
+Models of the problem and some types of simulation have low cost.&lt;br /&gt;
+Simulate all the ways, as deep as you can.&lt;/p&gt;
+&lt;p&gt;I like referring not only to logical constructs to explain stuff here, so have this random connection about &amp;quot;planning&amp;quot;:&lt;br /&gt;
+God&#39;s plan.&lt;br /&gt;
+You might connect &amp;quot;God&#39;s plan&amp;quot; to some pop culture stuff, but the root of the concept is the christian branding of determinism. God somehow gives you some &amp;quot;fate&amp;quot;.&lt;/p&gt;
+&lt;p&gt;But if you take another christian concept, the possession by demons, you will notice that when you&#39;re thinking, you cannot (always) be sure if &amp;quot;God&amp;quot; or &amp;quot;Demon&amp;quot; talks to you. In some cases it&#39;s pretty obvious, when you&#39;re indulging in something for example. In any way, if you follow the demonic route, it will lead you to a pretty bad &amp;quot;fate&amp;quot;.&lt;/p&gt;
+&lt;p&gt;That&#39;s why I would argue &amp;quot;God&#39;s plan&amp;quot; is something which can either be fulfilled by anyone, in a very real way, similar to Jesus &lt;em&gt;or&lt;/em&gt; it&#39;s something you&#39;re &lt;strong&gt;call&lt;/strong&gt;ed to do, but which you have to follow by walking the good way.&lt;br /&gt;
+Fate can be any way, &amp;quot;God&#39;s plan&amp;quot; would be the real, good way.&lt;br /&gt;
+That kinda puts too much logic into it, but then again, what&#39;s the definition of a plan? :)&lt;/p&gt;
+&lt;p&gt;Another interesting aspect of this is that you can see pretty much any plan as a rescue operation. If it doesn&#39;t fit that, at least for now I think it&#39;s probably indulgence. Are you saving your health? Your future? Your time? In an abstract sense, value? How much value?&lt;br /&gt;
+Is your plan of buying a lambo instead of having kids at some point saving you enough value?&lt;/p&gt;
+&lt;p&gt;I have not thought about writing this, I just did it because some random guy on discord told me my articles look great. Then I randomly thought of the title. Then I thought of &amp;quot;rescuing the world&amp;quot;. Then I thought about selling the title, when I came up with a sort of family-hostage situation. The other concepts came from a great book I&#39;m currently reading, &lt;a href=&quot;https://www.goodreads.com/book/show/61327449-how-big-things-get-done&quot; target=&quot;_blank&quot; class=&quot;external-link&quot;&gt;&amp;quot;How Big Things Get Done&amp;quot;&lt;/a&gt;.&lt;br /&gt;
+Then I randomly wanted to watch+listen to an interesting &lt;a href=&quot;https://www.youtube.com/watch?v=XxiCnVqP7Dg&quot; target=&quot;_blank&quot; class=&quot;external-link&quot;&gt;Matrix edit&lt;/a&gt; I randomly found on a discord server a few months ago, which reminded me of &amp;quot;God&#39;s plan&amp;quot;, which is fitting the topic well, so I thought about that a bit.&lt;br /&gt;
+I had that idea of &amp;quot;which is the correct voice to listen to&amp;quot; in my mind for quite a while, because it does really get more blurry once you get to a certain age and receive more interesting decisions to make.&lt;br /&gt;
+Then, a few weeks ago, I watched a playthrough of &amp;quot;The Inn-Sanity&amp;quot;, which is a game about a few religious topics, sometimes a bit too direct, but containing interesting philosophical bits. There&#39;s that one priest which thoroughly believes god is giving him backup and telling him what to do, but in the end he seems to be under the same demonic influences as the other inhabitants.&lt;/p&gt;
+&lt;p&gt;I still think there&#39;s something very obvious about &amp;quot;the right way&amp;quot;, but once you crack once or twice you might end up in a shitshow of your own thoughts and behaviors.&lt;/p&gt;
+&lt;p&gt;You need to reset.&lt;br /&gt;
+Turn it off and on again.&lt;br /&gt;
+You lost. Try again.&lt;br /&gt;
+Recycle your thoughts.&lt;br /&gt;
+Cross over the threshold.&lt;br /&gt;
+A new day&#39;s a new beginning.&lt;br /&gt;
+Happy new year&#39;s resolutions.&lt;br /&gt;
+Change your environment completely.&lt;br /&gt;
+Meditation resets your mind.&lt;br /&gt;
+Rebasing your breath.&lt;br /&gt;
+Pinch your cheeks and wake up.&lt;/p&gt;
+&lt;p&gt;I&#39;m saying this to you and to myself. Pick up the &lt;strong&gt;call&lt;/strong&gt; and answer it.&lt;br /&gt;
+I need to talk to your captor.&lt;br /&gt;
+The rescue plan starts with communication.&lt;/p&gt;
+
+            </content>
+            <link href="https://wewillwin.dev/rescuing-is-about-planning/" >
+        </entry>
+        <entry>
+            <title>
                 No, Discord, I am not chilling
                 
             </title>
-            <updated>2024-07-16T16:54:05Z</updated>
+            <updated>2025-03-28T23:32:16Z</updated>
             <id>https://wewillwin.dev/no-discord-i-am-not-chilling/</id>
             <content type="html">
                 &lt;p&gt;What it says in the title.&lt;/p&gt;
@@ -109,7 +158,7 @@ Maybe a bit to stir controversy, because all publicity is good publicity for hug
                 Bureaucracy fosters Extremism
                 
             </title>
-            <updated>2024-07-16T16:54:05Z</updated>
+            <updated>2025-03-28T23:32:16Z</updated>
             <id>https://wewillwin.dev/bureaucracy-fosters-extremism/</id>
             <content type="html">
                 &lt;p&gt;The less powerful you feel, the more power you seek after and the more drastic measures you think of.&lt;br /&gt;

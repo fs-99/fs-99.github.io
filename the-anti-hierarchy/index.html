@@ -47,7 +47,7 @@
 
 <link href="/styles/digital-garden-base.css" rel="stylesheet">
     <link href="/styles/obsidian-base.css" rel="stylesheet">
-    <link href="/styles/_theme.fadbc7af.css" rel="stylesheet">
+    <link href="/styles/_theme.ef119c57.css" rel="stylesheet">
 
 
 <link href="/styles/custom-style.css" rel="stylesheet">
@@ -253,7 +253,7 @@
     async function init() {
         //init offline search index
 
-        const searchIndexDate = '2024-07-16T16:54:11.967Z';
+        const searchIndexDate = '2025-03-28T23:32:23.688Z';
         let shouldFetch = true;
         if(localStorage.getItem("searchIndex")) {
             let {date, docs}= JSON.parse(localStorage.getItem('searchIndex'));
@@ -265,9 +265,9 @@
             }        
         }
         if(shouldFetch){
-            let docs = await(await fetch('/searchIndex.json?v=2024-07-16T16:54:11.967Z')).json();
+            let docs = await(await fetch('/searchIndex.json?v=2025-03-28T23:32:23.688Z')).json();
             let index = createIndex(docs);
-            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-07-16T16:54:11.967Z', docs}));
+            localStorage.setItem("searchIndex", JSON.stringify({date: '2025-03-28T23:32:23.688Z', docs}));
             window.docs = docs
             window.index = index;
         }

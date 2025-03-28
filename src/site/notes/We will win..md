@@ -10,6 +10,7 @@ Some of these might hurt you, some of them might soothe you.
 
 ## Latest
 
+[[Rescuing is about planning\|Rescuing is about planning]]
 [[No, Discord, I am not chilling\|No, Discord, I am not chilling]]
 [[Silly con valley\|Silly con valley]]
 [[There is no free time\|There is no free time]]

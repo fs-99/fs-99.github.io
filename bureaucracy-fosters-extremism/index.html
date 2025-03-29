@@ -253,7 +253,7 @@
     async function init() {
         //init offline search index
 
-        const searchIndexDate = '2025-03-29T20:42:11.170Z';
+        const searchIndexDate = '2025-03-29T21:11:43.649Z';
         let shouldFetch = true;
         if(localStorage.getItem("searchIndex")) {
             let {date, docs}= JSON.parse(localStorage.getItem('searchIndex'));
@@ -265,9 +265,9 @@
             }        
         }
         if(shouldFetch){
-            let docs = await(await fetch('/searchIndex.json?v=2025-03-29T20:42:11.170Z')).json();
+            let docs = await(await fetch('/searchIndex.json?v=2025-03-29T21:11:43.649Z')).json();
             let index = createIndex(docs);
-            localStorage.setItem("searchIndex", JSON.stringify({date: '2025-03-29T20:42:11.170Z', docs}));
+            localStorage.setItem("searchIndex", JSON.stringify({date: '2025-03-29T21:11:43.649Z', docs}));
             window.docs = docs
             window.index = index;
         }
@@ -516,7 +516,7 @@ Extremism is the <em><strong>small</strong></em> swing back into <em>disorder</e
 <p>Do you think this is true?<br>
 When does it really trigger someone to act extremism out?</p>
 <p>related:<br>
-<a href="https://warontherocks.com/2021/02/bureaucratizing-to-fight-extremism-in-the-military/" target="_blank" class="external-link">https://warontherocks.com/2021/02/bureaucratizing-to-fight-extremism-in-the-military/</a></p>
+<a href="https://warontherocks.com/2021/02/bureaucratizing-to-fight-extremism-in-the-military/" target="_blank">https://warontherocks.com/2021/02/bureaucratizing-to-fight-extremism-in-the-military/</a></p>
 
 
       

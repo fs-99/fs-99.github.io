@@ -253,7 +253,7 @@
     async function init() {
         //init offline search index
 
-        const searchIndexDate = '2025-03-29T20:42:11.170Z';
+        const searchIndexDate = '2025-03-29T21:11:43.649Z';
         let shouldFetch = true;
         if(localStorage.getItem("searchIndex")) {
             let {date, docs}= JSON.parse(localStorage.getItem('searchIndex'));
@@ -265,9 +265,9 @@
             }        
         }
         if(shouldFetch){
-            let docs = await(await fetch('/searchIndex.json?v=2025-03-29T20:42:11.170Z')).json();
+            let docs = await(await fetch('/searchIndex.json?v=2025-03-29T21:11:43.649Z')).json();
             let index = createIndex(docs);
-            localStorage.setItem("searchIndex", JSON.stringify({date: '2025-03-29T20:42:11.170Z', docs}));
+            localStorage.setItem("searchIndex", JSON.stringify({date: '2025-03-29T21:11:43.649Z', docs}));
             window.docs = docs
             window.index = index;
         }
@@ -525,8 +525,8 @@ Fate can be any way, &quot;God's plan&quot; would be the real, good way.<br>
 That kinda puts too much logic into it, but then again, what's the definition of a plan? :)</p>
 <p>Another interesting aspect of this is that you can see pretty much any plan as a rescue operation. If it doesn't fit that, at least for now I think it's probably indulgence. Are you saving your health? Your future? Your time? In an abstract sense, value? How much value?<br>
 Is your plan of buying a lambo instead of having kids at some point saving you enough value?</p>
-<p>I have not thought about writing this, I just did it because some random guy on discord told me my articles look great. Then I randomly thought of the title. Then I thought of &quot;rescuing the world&quot;. Then I thought about selling the title, when I came up with a sort of family-hostage situation. The other concepts came from a great book I'm currently reading, <a href="https://www.goodreads.com/book/show/61327449-how-big-things-get-done" target="_blank" class="external-link">&quot;How Big Things Get Done&quot;</a>.<br>
-Then I randomly wanted to watch+listen to an interesting <a href="https://www.youtube.com/watch?v=XxiCnVqP7Dg" target="_blank" class="external-link">Matrix edit</a> I randomly found on a discord server a few months ago, which reminded me of &quot;God's plan&quot;, which is fitting the topic well, so I thought about that a bit.<br>
+<p>I have not thought about writing this, I just did it because some random guy on discord told me my articles look great. Then I randomly thought of the title. Then I thought of &quot;rescuing the world&quot;. Then I thought about selling the title, when I came up with a sort of family-hostage situation. The other concepts came from a great book I'm currently reading, <a href="https://www.goodreads.com/book/show/61327449-how-big-things-get-done" target="_blank">&quot;How Big Things Get Done&quot;</a>.<br>
+Then I randomly wanted to watch+listen to an interesting <a href="https://www.youtube.com/watch?v=XxiCnVqP7Dg" target="_blank">Matrix edit</a> I randomly found on a discord server a few months ago, which reminded me of &quot;God's plan&quot;, which is fitting the topic well, so I thought about that a bit.<br>
 I had that idea of &quot;which is the correct voice to listen to&quot; in my mind for quite a while, because it does really get more blurry once you get to a certain age and receive more interesting decisions to make.<br>
 Then, a few weeks ago, I watched a playthrough of &quot;The Inn-Sanity&quot;, which is a game about a few religious topics, sometimes a bit too direct, but containing interesting philosophical bits. There's that one priest which thoroughly believes god is giving him backup and telling him what to do, but in the end he seems to be under the same demonic influences as the other inhabitants.</p>
 <p>I still think there's something very obvious about &quot;the right way&quot;, but once you crack once or twice you might end up in a shitshow of your own thoughts and behaviors.</p>

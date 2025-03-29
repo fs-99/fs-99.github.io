@@ -253,7 +253,7 @@
     async function init() {
         //init offline search index
 
-        const searchIndexDate = '2025-03-29T20:42:11.170Z';
+        const searchIndexDate = '2025-03-29T21:11:43.649Z';
         let shouldFetch = true;
         if(localStorage.getItem("searchIndex")) {
             let {date, docs}= JSON.parse(localStorage.getItem('searchIndex'));
@@ -265,9 +265,9 @@
             }        
         }
         if(shouldFetch){
-            let docs = await(await fetch('/searchIndex.json?v=2025-03-29T20:42:11.170Z')).json();
+            let docs = await(await fetch('/searchIndex.json?v=2025-03-29T21:11:43.649Z')).json();
             let index = createIndex(docs);
-            localStorage.setItem("searchIndex", JSON.stringify({date: '2025-03-29T20:42:11.170Z', docs}));
+            localStorage.setItem("searchIndex", JSON.stringify({date: '2025-03-29T21:11:43.649Z', docs}));
             window.docs = docs
             window.index = index;
         }
@@ -512,8 +512,8 @@
 If anti-depressants artificially modify serotonin levels, do we artificially change the structure of the hierarchy?<br>
 If everyone were getting more and more depressed, using anti-depressants (and drugs) to counteract this fact, would it lead to a society with an inverted or skewed hierarchy?</p>
 <p>related:<br>
-<a href="https://www.scripps.edu/newsandviews/e_20030929/parsons.html" target="_blank" class="external-link">https://www.scripps.edu/newsandviews/e_20030929/parsons.html</a><br>
-<a href="https://foundationsrecoverynetwork.com/articles/the-effect-of-drugs-on-serotonin/" target="_blank" class="external-link">https://foundationsrecoverynetwork.com/articles/the-effect-of-drugs-on-serotonin/</a></p>
+<a href="https://www.scripps.edu/newsandviews/e_20030929/parsons.html" target="_blank">https://www.scripps.edu/newsandviews/e_20030929/parsons.html</a><br>
+<a href="https://foundationsrecoverynetwork.com/articles/the-effect-of-drugs-on-serotonin/" target="_blank">https://foundationsrecoverynetwork.com/articles/the-effect-of-drugs-on-serotonin/</a></p>
 
 
       

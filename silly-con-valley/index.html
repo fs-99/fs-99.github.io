@@ -253,7 +253,7 @@
     async function init() {
         //init offline search index
 
-        const searchIndexDate = '2025-03-29T20:42:11.170Z';
+        const searchIndexDate = '2025-03-29T21:11:43.649Z';
         let shouldFetch = true;
         if(localStorage.getItem("searchIndex")) {
             let {date, docs}= JSON.parse(localStorage.getItem('searchIndex'));
@@ -265,9 +265,9 @@
             }        
         }
         if(shouldFetch){
-            let docs = await(await fetch('/searchIndex.json?v=2025-03-29T20:42:11.170Z')).json();
+            let docs = await(await fetch('/searchIndex.json?v=2025-03-29T21:11:43.649Z')).json();
             let index = createIndex(docs);
-            localStorage.setItem("searchIndex", JSON.stringify({date: '2025-03-29T20:42:11.170Z', docs}));
+            localStorage.setItem("searchIndex", JSON.stringify({date: '2025-03-29T21:11:43.649Z', docs}));
             window.docs = docs
             window.index = index;
         }
@@ -511,9 +511,9 @@
       <p>After many years of innovation, Silicon Valley has turned to shit.<br>
 It is now filled with con-artists and people who trust those naively.</p>
 <p>related:<br>
-<a href="https://www.businessinsider.com/venture-capital-big-tech-antitrust-predatory-pricing-uber-wework-bird-2023-7" target="_blank" class="external-link">https://www.businessinsider.com/venture-capital-big-tech-antitrust-predatory-pricing-uber-wework-bird-2023-7</a><br>
-<a href="https://www.wired.com/story/why-silicon-valley-falls-for-frauds/" target="_blank" class="external-link">https://www.wired.com/story/why-silicon-valley-falls-for-frauds/</a><br>
-<a href="https://www.nytimes.com/2023/04/15/business/silicon-valley-fraud.html" target="_blank" class="external-link">https://www.nytimes.com/2023/04/15/business/silicon-valley-fraud.html</a></p>
+<a href="https://www.businessinsider.com/venture-capital-big-tech-antitrust-predatory-pricing-uber-wework-bird-2023-7" target="_blank">https://www.businessinsider.com/venture-capital-big-tech-antitrust-predatory-pricing-uber-wework-bird-2023-7</a><br>
+<a href="https://www.wired.com/story/why-silicon-valley-falls-for-frauds/" target="_blank">https://www.wired.com/story/why-silicon-valley-falls-for-frauds/</a><br>
+<a href="https://www.nytimes.com/2023/04/15/business/silicon-valley-fraud.html" target="_blank">https://www.nytimes.com/2023/04/15/business/silicon-valley-fraud.html</a></p>
 
 
       

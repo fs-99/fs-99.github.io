@@ -257,11 +257,11 @@ module.exports = function (eleventyConfig) {
           tokens[idx].attrs[aIndex][1] = "_blank";
         }
 
-        if (classIndex < 0) {
-          tokens[idx].attrPush(["class", "external-link"]);
-        } else {
-          tokens[idx].attrs[classIndex][1] = "external-link";
-        }
+        // if (classIndex < 0) {
+        //   tokens[idx].attrPush(["class", "external-link"]);
+        // } else {
+        //   tokens[idx].attrs[classIndex][1] = "external-link";
+        // }
 
         return defaultLinkRule(tokens, idx, options, env, self);
       };

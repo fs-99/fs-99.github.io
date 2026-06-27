@@ -179,8 +179,8 @@
 
   --scrollbar-bg: var(--bg_dark2);
   --scrollbar-thumb-bg: var(--comment);
-  --scrollbar-active-thumb-bg: var(--bg_dark);
-  --scrollbar-width: 0px;
+  --scrollbar-active-thumb-bg: var(--comment);
+  --scrollbar-width: 7px;
 
   --h1-color: var(--red);
   --h2-color: var(--yellow);
@@ -357,10 +357,22 @@ body.h6-divider-on :is(.markdown-preview-sizer>div>h6, .markdown-rendered>h6, .H
 
 ::-webkit-scrollbar {
   width: var(--scrollbar-width);
+  background-color: transparent !important;
 }
 
+:hover::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb-bg) !important;
+}
+
+::-webkit-scrollbar-thumb:hover,
+::-webkit-scrollbar-thumb:active {
+  background-color: var(--scrollbar-active-thumb-bg) !important;
+}
+
+
 ::-webkit-scrollbar:horizontal {
-  height: var(--scrollbar-width);
+  height: 0;
+  background-color: transparent !important;
 }
 
 
@@ -411,11 +423,6 @@ body {
 body:not(.table-width-obsidian-default) .markdown-source-view.mod-cm6 .cm-table-widget .table-wrapper,
 body:not(.table-width-obsidian-default) :is(.markdown-rendered, .markdown-source-view.mod-cm6.is-live-preview) table {
   width: 100% !important;
-}
-
-.markdown-source-view,
-.markdown-reading-view {
-  container-type: inline-size;
 }
 
 .table-width-customized .markdown-source-view.mod-cm6.is-live-preview .cm-content>.cm-table-widget,
@@ -836,6 +843,7 @@ body:not(.disable-alternative-checkboxes) li[data-task="<"]>p>input:checked {
     --table-header-background: rgba(var(--bg_dark2_x), 0.25);
   }
 }
+
 
 
 

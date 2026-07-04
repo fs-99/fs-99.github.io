@@ -251,7 +251,7 @@
     async function init() {
         //init offline search index
 
-        const searchIndexDate = '2026-06-27T20:57:14.731Z';
+        const searchIndexDate = '2026-07-04T11:59:48.533Z';
         let shouldFetch = true;
         if(localStorage.getItem("searchIndex")) {
             let {date, docs}= JSON.parse(localStorage.getItem('searchIndex'));
@@ -263,9 +263,9 @@
             }        
         }
         if(shouldFetch){
-            let docs = await(await fetch('/searchIndex.json?v=2026-06-27T20:57:14.731Z')).json();
+            let docs = await(await fetch('/searchIndex.json?v=2026-07-04T11:59:48.533Z')).json();
             let index = createIndex(docs);
-            localStorage.setItem("searchIndex", JSON.stringify({date: '2026-06-27T20:57:14.731Z', docs}));
+            localStorage.setItem("searchIndex", JSON.stringify({date: '2026-07-04T11:59:48.533Z', docs}));
             window.docs = docs
             window.index = index;
         }
@@ -511,7 +511,8 @@
 Some of these might hurt you, some of them might soothe you.<br>
 They will evolve over time.</p>
 <h2 id="latest" tabindex="-1">Latest</h2>
-<p><a class="internal-link" target="" data-note-icon="" href="/what-is-art/">What is Art?</a><br>
+<p><a class="internal-link" target="" data-note-icon="" href="/freedom-for-not-freedom-from/">Freedom for, not Freedom from</a><br>
+<a class="internal-link" target="" data-note-icon="" href="/what-is-art/">What is Art?</a><br>
 <a class="internal-link" target="" data-note-icon="" href="/rescuing-is-about-planning/">Rescuing is about planning</a><br>
 <a class="internal-link" target="" data-note-icon="" href="/no-discord-i-am-not-chilling/">No, Discord, I am not chilling</a><br>
 <a class="internal-link" target="" data-note-icon="" href="/silly-con-valley/">Silly con valley</a><br>

@@ -9,6 +9,7 @@ They will evolve over time.
 
 ## Latest
 
+[[Freedom for, not Freedom from\|Freedom for, not Freedom from]]
 [[What is Art?\|What is Art?]]
 [[Rescuing is about planning\|Rescuing is about planning]]
 [[No, Discord, I am not chilling\|No, Discord, I am not chilling]]

@@ -1,16 +1,15 @@
 {% macro menuItem(fileOrFolderName, fileOrFolder, step, currentPath) %}
     {%if fileOrFolder.isNote or fileOrFolder.isFolder%}
-        <div x-show="isOpen" style="display:none" class="{{'filelist' if step>0}}">
+        <div class="{% if step > 0 %}filelist folder-contents{% endif %}">
             {%if fileOrFolder.isNote and not fileOrFolder.hide %}
-                <div @click.stop class="notelink {{ 'active-note' if fileOrFolder.permalink === permalink}}">
-                    {%- if not meta.noteIconsSettings.filetree -%}<i icon-name="sticky-note" aria-hidden="true"></i>{%- endif -%}
+                <div class="notelink {{ 'active-note' if fileOrFolder.permalink === permalink}}">
                     <a data-note-icon="{{fileOrFolder.noteIcon}}" style="text-decoration: none;" class="filename" href="{{fileOrFolder.permalink}}">{{fileOrFolder.name}} </a>
                 </div>
             {% elif fileOrFolder.isFolder%}
-                <div class="folder inner-folder"  x-data="{isOpen: $persist(false).as('{{currentPath}}')}" @click.stop="isOpen=!isOpen">
-                    <div class="foldername-wrapper align-icon">
-                    <i x-show="isOpen" style="display: none;"  icon-name="chevron-down"></i>
-                    <i x-show="!isOpen"  icon-name="chevron-right"></i>
+                <div class="folder inner-folder" data-folder-path="{{currentPath}}">
+                    <div class="foldername-wrapper align-icon folder-toggle">
+                    <i class="folder-chevron-open" style="display: none;" data-lucide="chevron-down"></i>
+                    <i class="folder-chevron-closed" data-lucide="chevron-right"></i>
                     <span class="foldername">{{fileOrFolderName}}</span>
                     </div>
                     {% for fileOrFolderName, child in fileOrFolder %}
@@ -21,36 +20,123 @@
         </div>
         {%endif%}
     {% endmacro %}
-    
-    <div x-init="isDesktop = (window.innerWidth>=1400) ? true: false;" 
-            x-on:resize.window="isDesktop = (window.innerWidth>=1400) ? true : false;" 
-            x-data="{isDesktop: true, showFilesMobile: false}">
 
-        <div x-show.important="!isDesktop" style="display: none;">
+    <div id="filetree-root" class="filetree" data-desktop-min="1000">
+        <div id="filetree-mobile-navbar" hidden>
             {%include "components/filetreeNavbar.njk"%}
         </div>
-        
-        <div x-show="showFilesMobile && !isDesktop" @click="showFilesMobile = false" style="display:none;" class="fullpage-overlay"></div>
 
-      <nav class="filetree-sidebar"  x-show.important="isDesktop || showFilesMobile" style="display: none;">
+        <div id="filetree-overlay" class="fullpage-overlay" hidden></div>
+
+      <div id="filetree-panel" class="filetree-wrapper">
+      <nav class="filetree-sidebar">
         {% for imp in dynamics.filetree.beforeTitle %}
             {% include imp %}
         {% endfor %}
-         <a href="/" style="text-decoration: none;">
-               <h1 style="text-align:center;">{{meta.siteName}}</h1>
+         {% if meta.siteLogoPath %}
+         <a href="/" style="text-decoration: none; display: flex; justify-content: center;">
+                   <img class="site-logo" src="{{meta.siteLogoPath}}" alt="{{meta.siteName}}">
          </a>
+         {% else %}
+         <a href="/" style="text-decoration: none; text-align: center;">
+                   <h1 style="text-align:center;">{{meta.siteName}}</h1>
+         </a>
+         {% endif %}
          {% for imp in dynamics.filetree.afterTitle %}
             {% include imp %}
         {% endfor %}
         {% if settings.dgEnableSearch === true%}
-            <div style="display: flex; justify-content: center;">
-                {% include "components/searchButton.njk" %}
-            </div>
+            {% include "components/searchButton.njk" %}
         {%endif%}
-         <div class="folder" x-data="{isOpen: true}">
+         <div class="folder" data-folder-path="__root__" data-open-default="true">
                {%- for fileOrFolderName, fileOrFolder in filetree -%}
                   {{menuItem(fileOrFolderName, fileOrFolder, 0, fileOrFolderName)}}
                {%- endfor -%}
          </div>
       </nav>
+      </div>
     </div>
+
+<script>
+(function () {
+    const DESKTOP_MIN = 1000;
+    const root = document.getElementById('filetree-root');
+    if (!root) return;
+
+    const mobileNavbar = document.getElementById('filetree-mobile-navbar');
+    const panel = document.getElementById('filetree-panel');
+    const overlay = document.getElementById('filetree-overlay');
+    const menuBtn = document.getElementById('filetree-menu-btn');
+    let showFilesMobile = false;
+
+    function isDesktop() {
+        return window.innerWidth >= DESKTOP_MIN;
+    }
+
+    function syncLayout() {
+        const desktop = isDesktop();
+        if (mobileNavbar) mobileNavbar.hidden = desktop;
+        if (desktop) showFilesMobile = false;
+        if (panel) panel.hidden = !(desktop || showFilesMobile);
+        if (overlay) overlay.hidden = !(showFilesMobile && !desktop);
+    }
+
+    function setFolderOpen(folder, open) {
+        folder.dataset.open = open ? 'true' : 'false';
+        const toggle = folder.querySelector(':scope > .foldername-wrapper');
+        const openIcon = toggle?.querySelector('.folder-chevron-open');
+        const closedIcon = toggle?.querySelector('.folder-chevron-closed');
+        if (openIcon) openIcon.style.display = open ? '' : 'none';
+        if (closedIcon) closedIcon.style.display = open ? 'none' : '';
+        folder.querySelectorAll(':scope > .folder-contents').forEach((el) => {
+            el.hidden = !open;
+        });
+        const path = folder.dataset.folderPath;
+        if (path && path !== '__root__') {
+            try {
+                localStorage.setItem('dg-folder:' + path, open ? '1' : '0');
+            } catch (_) {}
+        }
+    }
+
+    function initFolders() {
+        root.querySelectorAll('.folder[data-folder-path]').forEach((folder) => {
+            const path = folder.dataset.folderPath;
+            let open = folder.dataset.openDefault === 'true';
+            if (path && path !== '__root__') {
+                open = false;
+                try {
+                    const stored = localStorage.getItem('dg-folder:' + path);
+                    if (stored === '1') open = true;
+                    else if (stored === '0') open = false;
+                } catch (_) {}
+            }
+            setFolderOpen(folder, open);
+
+            const toggle = folder.querySelector(':scope > .foldername-wrapper.folder-toggle');
+            if (toggle) {
+                toggle.addEventListener('click', (event) => {
+                    event.stopPropagation();
+                    setFolderOpen(folder, folder.dataset.open !== 'true');
+                    if (window.lucide) {
+                        lucide.createIcons({ attrs: { class: ['svg-icon'] } });
+                    }
+                });
+            }
+        });
+    }
+
+    menuBtn?.addEventListener('click', () => {
+        showFilesMobile = !showFilesMobile;
+        syncLayout();
+    });
+    overlay?.addEventListener('click', () => {
+        showFilesMobile = false;
+        syncLayout();
+    });
+    window.addEventListener('resize', syncLayout);
+
+    initFolders();
+    syncLayout();
+})();
+</script>

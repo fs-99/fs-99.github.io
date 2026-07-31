@@ -21,7 +21,7 @@ const normalizeFavicon = require("./src/site/normalize-favicon.js");
 const FAVICON_SOURCE = "./src/site/favicon.png";
 const FAVICON_NORMALIZED = "./.cache/favicon.normalized.png";
 normalizeFavicon(FAVICON_SOURCE, FAVICON_NORMALIZED);
-const tocPlugin = require("eleventy-plugin-nesting-toc");
+const { tocFilter } = require("./src/helpers/toc");
 const { parse } = require("node-html-parser");
 const htmlMinifier = require("html-minifier-terser");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
@@ -737,11 +737,12 @@ module.exports = function(eleventyConfig) {
   });
   eleventyConfig.addWatchTarget(FAVICON_SOURCE);
   eleventyConfig.addPlugin(faviconsPlugin, { outputDir: "dist" });
-  eleventyConfig.addPlugin(tocPlugin, {
-    ul: true,
-    tags: ["h1", "h2", "h3", "h4", "h5", "h6"],
-  });
-
+  eleventyConfig.addFilter("toc", (content, opts = {}) =>
+    tocFilter(content, {
+      tags: ["h1", "h2", "h3", "h4", "h5", "h6"],
+      ...opts,
+    })
+  );
   // Canvas files are pre-compiled HTML by the plugin - don't process as markdown
   eleventyConfig.addExtension("canvas", {
     read: true,

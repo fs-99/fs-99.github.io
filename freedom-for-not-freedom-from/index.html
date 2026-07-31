@@ -1,1052 +1,132 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <title>Freedom for, not Freedom from</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<script src="https://cdn.jsdelivr.net/npm/lucide@0.115.0/dist/umd/lucide.min.js"></script>
-<script>
-    // Create callout icons
-    window.addEventListener("load", () => {
-        document.querySelectorAll(".callout").forEach((elem) => {
-            const icon = getComputedStyle(elem).getPropertyValue('--callout-icon');
-            const iconName = icon && icon.trim().replace(/^lucide-/, "");
-
-            if (iconName) {
-                const calloutTitle = elem.querySelector(".callout-title");
-
-                if (calloutTitle) {
-                    const calloutIconContainer = document.createElement("div");
-                    const calloutIcon = document.createElement("i");
-
-                    calloutIconContainer.appendChild(calloutIcon);
-                    calloutIcon.setAttribute("icon-name", iconName);
-                    calloutIconContainer.setAttribute("class", "callout-icon");
-                    calloutTitle.insertBefore(calloutIconContainer, calloutTitle.firstChild);
-                }
-            }
-        });
-
-        lucide.createIcons();
-
-        // Collapse callouts
-        Array.from(document.querySelectorAll(".callout.is-collapsible")).forEach((elem) => {
-            elem.querySelector('.callout-title').addEventListener("click", (event) => {
-                if (elem.classList.contains("is-collapsed")) {
-                    elem.classList.remove("is-collapsed");
-                } else {
-                    elem.classList.add("is-collapsed");
-                }
-            });
-        });
-    });
-</script>
-
-
-<script defer src="https://fastly.jsdelivr.net/npm/force-graph@1.43.0/dist/force-graph.min.js"></script>
-
+<head>
+<title>Freedom for, not Freedom from</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script defer="defer" src="https://fastly.jsdelivr.net/npm/force-graph@1.43.0/dist/force-graph.min.js"></script>
+<script async type="module">import mermaid from"https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";mermaid.initialize({startOnLoad:!0})</script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js" integrity="sha512-hpZ5pDCF2bRCweL5WoA0/N1elet1KYL5mx3LP555Eg/0ZguaHawxNvEjF6O3rufAChs16HVNhEc6blF/rZoowQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha512-sv0slik/5O0JIPdLBCR2A3XDg/1U3WuDEheZfI/DI5n8Yqc3h5kjrnr46FGBNiUAJF7rE4LHKwQ/SoSLRKAxEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>window.addEventListener("load",()=>{document.querySelectorAll(".callout").forEach(e=>{const t=getComputedStyle(e).getPropertyValue("--callout-icon"),l=t&&t.trim().replace(/^lucide-/,"");if(l){const t=e.querySelector(".callout-title");if(t){const e=document.createElement("div"),c=document.createElement("i");e.appendChild(c),c.setAttribute("data-lucide",l),e.setAttribute("class","callout-icon"),t.insertBefore(e,t.firstChild)}}}),lucide.createIcons(),Array.from(document.querySelectorAll(".callout.is-collapsible")).forEach(e=>{e.querySelector(".callout-title").addEventListener("click",t=>{e.classList.contains("is-collapsed")?e.classList.remove("is-collapsed"):e.classList.add("is-collapsed")})})})</script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css" integrity="sha512-mIs9kKbaw6JZFfSuo+MovjU+Ntggfoj8RwAmJbVXQ5mkAX5LlgETQEweFPI18humSPHymTb5iikEOKWF7I8ncQ==" crossorigin="anonymous" referrerpolicy="no-referrer" async>
+<link href="/styles/obsidian-base.css" rel="stylesheet">
+<link href="/styles/_theme.b7d1ddf0.css" rel="stylesheet">
 <link href="/styles/digital-garden-base.css" rel="stylesheet">
-    <link href="/styles/obsidian-base.css" rel="stylesheet">
-    <link href="/styles/_theme.b7d1ddf0.css" rel="stylesheet">
-
-
 <link href="/styles/custom-style.css" rel="stylesheet">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/manifest.webmanifest">
-
-
-
-
-
 <style></style>
-    
-    
-  </head>
-  <body class="theme-dark markdown-preview-view markdown-rendered markdown-preview-section ">
-    
-    
-    
-      
-    <nav class="navbar">
-        <div class="navbar-inner">
-            <a href="/" style="text-decoration: none;">
-                <h1 style="margin: 15px !important;">wewillwin</h1>
-            </a>
-        </div>
-        
-            <div class="search-button align-icon" onclick="toggleSearch()">
-    <span class="search-icon">
-        <i icon-name="search" ></i>
-    </span>
-    <span class="search-text">
-        <span>Search</span>
-        <span style="font-size: 0.6rem; padding: 2px 2px 0 6px; text-align:center; transform: translateY(4px);" class="search-keys">
-            CTRL + K
-        </span>
-    </span>
+</head>
+<body class="theme-dark markdown-preview-view markdown-rendered markdown-preview-section no-filetree has-navbar">
+<nav class="navbar">
+<div class="navbar-inner">
+<a href="/" style="text-decoration:none">
+<h1 style="margin:15px!important">wewillwin</h1>
+</a>
 </div>
-        
-    </nav>
-    
-    
-
-    
-      <div class="search-container" id="globalsearch" onclick="toggleSearch()">
-    <div class="search-box">
-        <input type="search" id="term" placeholder="Start typing...">
-        <div id="search-results"></div>
-        <footer class="search-box-footer">
-            <div class="navigation-hint">
-                <span>Enter to select</span>
-            </div>
-
-            <div class="navigation-hint align-icon">
-                <i  icon-name="arrow-up" aria-hidden="true"></i>
-                <i  icon-name="arrow-down" aria-hidden="true"></i>
-                <span>to navigate</span>
-            </div>
-
-            <div class="navigation-hint">
-                <span>ESC to close</span>
-            </div>
-
-        </footer>
-    </div>
+<div class="search-button align-icon" onclick="toggleSearch()">
+<span class="search-icon">
+<i data-lucide="search"></i>
+</span>
+<span class="search-text">Search</span>
+<span class="search-keys"><code>Ctrl</code>&nbsp;+&nbsp;<code>K</code></span>
+</div>
+</nav>
+<div class="search-container" id="globalsearch" onclick="toggleSearch()">
+<div class="search-box" onclick="event.stopPropagation()">
+<div class="search-header">
+<input type="search" id="term" placeholder="Start typing...">
+</div>
+<div class="search-layout no-preview" id="search-layout">
+<div class="search-results-panel" id="search-results">
+<span><i>Enter your search text in the box above</i></span>
+</div>
+<div class="search-preview-panel" id="search-preview">
+<div class="preview-placeholder">
+<i data-lucide="file-text"></i>
+<p>Select a result to preview</p>
+</div>
+<div class="preview-content" id="preview-content"></div>
+</div>
+</div>
+<footer class="search-box-footer">
+<div class="navigation-hint">
+<span><code>Enter</code>&nbsp;to select</span>
+</div>
+<div class="navigation-hint">
+<span><code>⇅</code>&nbsp;to navigate</span>
+</div>
+<div class="navigation-hint">
+<span><code>ESC</code>&nbsp;to close</span>
+</div>
+</footer>
+</div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/flexsearch@0.7.21/dist/flexsearch.bundle.js"></script>
-<script>
-    document.addEventListener('DOMContentLoaded', init, false);
-    document.addEventListener('DOMContentLoaded', setCorrectShortcut, false);
-
-    window.toggleSearch = function () {
-        if (document.getElementById('globalsearch').classList.contains('active')) {
-            document
-                .getElementById('globalsearch')
-                .classList
-                .remove('active');
-        } else {
-            document
-                .getElementById('globalsearch')
-                .classList
-                .add('active');
-            document
-                .getElementById('term')
-                .focus();
-        }
-    }
-
-    window.toggleTagSearch = function (evt) {
-        console.log(evt.textContent);
-        const term = evt.textContent;
-        if (term) {
-            window
-                .document
-                .getElementById('term')
-                .value = term.trim();
-            window.toggleSearch();
-            window.search();
-        }
-    }
-
-    const loadingSvg = `
-    <svg width="100" height="100" viewBox="0 0 45 45" xmlns="http://www.w3.org/2000/svg" stroke="#fff">
-      <g fill="none" fill-rule="evenodd" transform="translate(1 1)" stroke-width="2">
-          <circle cx="22" cy="22" r="6" stroke-opacity="0">
-              <animate attributeName="r"
-                   begin="1.5s" dur="3s"
-                   values="6;22"
-                   calcMode="linear"
-                   repeatCount="indefinite" />
-              <animate attributeName="stroke-opacity"
-                   begin="1.5s" dur="3s"
-                   values="1;0" calcMode="linear"
-                   repeatCount="indefinite" />
-              <animate attributeName="stroke-width"
-                   begin="1.5s" dur="3s"
-                   values="2;0" calcMode="linear"
-                   repeatCount="indefinite" />
-          </circle>
-          <circle cx="22" cy="22" r="6" stroke-opacity="0">
-              <animate attributeName="r"
-                   begin="3s" dur="3s"
-                   values="6;22"
-                   calcMode="linear"
-                   repeatCount="indefinite" />
-              <animate attributeName="stroke-opacity"
-                   begin="3s" dur="3s"
-                   values="1;0" calcMode="linear"
-                   repeatCount="indefinite" />
-              <animate attributeName="stroke-width"
-                   begin="3s" dur="3s"
-                   values="2;0" calcMode="linear"
-                   repeatCount="indefinite" />
-          </circle>
-          <circle cx="22" cy="22" r="8">
-              <animate attributeName="r"
-                   begin="0s" dur="1.5s"
-                   values="6;1;2;3;4;5;6"
-                   calcMode="linear"
-                   repeatCount="indefinite" />
-          </circle>
-      </g>
-  </svg>`;
-
-    function debounce(func, wait, immediate) {
-        var timeout;
-        return function () {
-            var context = this,
-                args = arguments;
-            var later = function () {
-                timeout = null;
-                if (!immediate) 
-                    func.apply(context, args);
-                };
-            var callNow = immediate && !timeout;
-            clearTimeout(timeout);
-            timeout = setTimeout(later, wait);
-            if (callNow) 
-                func.apply(context, args);
-            };
-    };
-
-    function setCorrectShortcut() {
-        if (navigator.platform.toUpperCase().indexOf('MAC') >= 0) {
-            document
-                .querySelectorAll(".search-keys")
-                .forEach(x => x.innerHTML = "⌘ + K");
-        }
-    }
-
-    function createIndex(posts) {
-        const encoder = (str) => str
-            .toLowerCase()
-            .split(/([^a-z]|[^\x00-\x7F])/)
-        const contentIndex = new FlexSearch.Document({
-            cache: true,
-            charset: "latin:extra",
-            optimize: true,
-            index: [
-                {
-                    field: "content",
-                    tokenize: "reverse",
-                    encode: encoder
-                }, {
-                    field: "title",
-                    tokenize: "forward",
-                    encode: encoder
-                }, {
-                    field: "tags",
-                    tokenize: "forward",
-                    encode: encoder
-                }
-            ]
-        })
-        posts.forEach((p, idx) => {
-            contentIndex.add({
-                id: idx, title: p.title, content: p.content, tags: p.tags //Change to removeHTML
-            })
-        });
-        return contentIndex;
-    }
-
-    async function init() {
-        //init offline search index
-
-        const searchIndexDate = '2026-07-04T11:59:48.533Z';
-        let shouldFetch = true;
-        if(localStorage.getItem("searchIndex")) {
-            let {date, docs}= JSON.parse(localStorage.getItem('searchIndex'));
-            if(date === searchIndexDate){
-                shouldFetch = false;
-                let index = createIndex(docs);
-                window.docs = docs
-                window.index = index;
-            }        
-        }
-        if(shouldFetch){
-            let docs = await(await fetch('/searchIndex.json?v=2026-07-04T11:59:48.533Z')).json();
-            let index = createIndex(docs);
-            localStorage.setItem("searchIndex", JSON.stringify({date: '2026-07-04T11:59:48.533Z', docs}));
-            window.docs = docs
-            window.index = index;
-        }
-
-        //open searchmodal when ctrl + k is pressed, cmd + k on mac
-        document.addEventListener('keydown', (e) => {
-            if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
-                e.preventDefault();
-                toggleSearch();
-            }
-            if (e.key === 'Escape') {
-                document
-                    .getElementById('globalsearch')
-                    .classList
-                    .remove('active');
-            }
-
-            //navigate search results with arrow keys
-            if (document.getElementById('globalsearch').classList.contains('active')) {
-                if (e.key === 'ArrowDown') {
-                    e.preventDefault();
-                    let active = document.querySelector('.searchresult.active');
-                    if (active) {
-                        active
-                            .classList
-                            .remove('active');
-                        if (active.nextElementSibling) {
-                            active
-                                .nextElementSibling
-                                .classList
-                                .add('active');
-                        } else {
-                            document
-                                .querySelector('.searchresult')
-                                .classList
-                                .add('active');
-                        }
-                    } else {
-                        document
-                            .querySelector('.searchresult')
-                            .classList
-                            .add('active');
-                    }
-
-                    let currentActive = document.querySelector('.searchresult.active');
-                    if (currentActive) {
-                        currentActive.scrollIntoView({behavior: 'smooth', block: 'nearest', inline: 'start'});
-                    }
-                }
-                if (e.key === 'ArrowUp') {
-                    e.preventDefault();
-                    let active = document.querySelector('.searchresult.active');
-                    if (active) {
-                        active
-                            .classList
-                            .remove('active');
-                        if (active.previousElementSibling) {
-                            active
-                                .previousElementSibling
-                                .classList
-                                .add('active');
-                        } else {
-                            document
-                                .querySelectorAll('.searchresult')
-                                .forEach((el) => {
-                                    if (!el.nextElementSibling) {
-                                        el
-                                            .classList
-                                            .add('active');
-                                    }
-                                });
-                        }
-                    } else {
-                        document
-                            .querySelectorAll('.searchresult')
-                            .forEach((el) => {
-                                if (el.nextElementSibling) {
-                                    el
-                                        .classList
-                                        .add('active');
-                                }
-                            });
-                    }
-
-                    let currentActive = document.querySelector('.searchresult.active');
-                    if (currentActive) {
-                        currentActive.scrollIntoView({behavior: 'smooth', block: 'nearest', inline: 'start'});
-                    }
-
-                }
-                if (e.key === 'Enter') {
-                    e.preventDefault();
-                    let active = document.querySelector('.searchresult.active');
-                    if (active) {
-                        window.location.href = active
-                            .querySelector("a")
-                            .href;
-                    }
-                }
-            }
-        });
-
-        const debouncedSearch = debounce(search, 200, false);
-        field = document.querySelector('#term');
-        field.addEventListener('keydown', (e) => {
-            if (e.key !== 'ArrowDown' && e.key !== 'ArrowUp') {
-                debouncedSearch();
-            }
-        });
-        resultsDiv = document.querySelector('#search-results');
-
-        const params = new URL(location.href).searchParams;
-        if (params.get('q')) {
-            field.setAttribute('value', params.get('q'));
-            toggleSearch();
-            search();
-        }
-    }
-    window.lastSearch = '';
-    async function search() {
-        let search = field
-            .value
-            .trim();
-        if (!search) 
-            return;
-        if (search == lastSearch) 
-            return;
-        console.log(`search for ${search}`);
-        window.lastSearch = search;
-
-        resultsDiv.innerHTML = loadingSvg;
-        //let searchRequest = await fetch(`/api/search?term=${encodeURIComponent(search)}`);
-        //let results = await searchRequest.json();
-        let results = offlineSearch(search);
-        let resultsHTML = '';
-        if (!results.length) {
-            let resultParagraph = document.createElement("p");
-            resultParagraph.innerText = `No results for "${search}"`;
-            resultsDiv.innerHTML = '';
-            resultsDiv.appendChild(resultParagraph);
-            return;
-        }
-        resultsHTML += '<div style="max-width:100%;">';
-        // we need to add title, url from ref
-        results.forEach(r => {
-            if(r.tags && r.tags.length > 0){
-                resultsHTML += `<div class="searchresult">
-                    <a class="search-link" href="${r.url}">${r.title}</a>
-                    <div onclick="window.location='${r.url}'">
-                        <div class="header-meta">
-                            <div class="header-tags">
-                                ${r.tags.map(tag=>'<a class="tag" href="JavaScript:Void(0);">#'+tag+'</a>').join("")}
-                            </div>
-                        </div>
-                        ${r.content}
-                    </div>
-                </div>`;
-            } else {
-                resultsHTML += `<div class="searchresult">
-                    <a class="search-link" href="${r.url}">${r.title}</a>
-                    <div onclick="window.location='${r.url}'">
-                        ${r.content}
-                    </div>
-                </div>`;
-            }
-        });
-        resultsHTML += '</div>';
-        resultsDiv.innerHTML = resultsHTML;
-    }
-
-    function truncate(str, size) {
-        //first, remove HTML
-        str = str.replaceAll(/<[^>]*>/g, '');
-        if (str.length < size) 
-            return str;
-        return str.substring(0, size - 3) + '...';
-    }
-
-    function offlineSearch(searchQuery) {
-        let data = window.docs;
-
-        let isTagSearch = searchQuery[0] === "#" && searchQuery.length > 1;
-
-        let searchResults = isTagSearch
-            ? index.search(searchQuery.substring(1), [
-                {
-                    field: "tags"
-                }
-            ])
-            : index.search(searchQuery, [
-                {
-                    field: "title",
-                    limit: 5
-                }, {
-                    field: "content",
-                    weight: 10
-                }
-            ]);
-
-        const getByField = (field) => {
-            const results = searchResults.filter((x) => x.field === field)
-            if (results.length === 0) {
-                return []
-            } else {
-                return [...results[0].result]
-            }
-        }
-        const allIds = new Set([
-            ...getByField("title"),
-            ...getByField("content"),
-            ...getByField("tags")
-        ])
-        const dataIds = [...allIds];
-        const finalResults = dataIds.map((id) => {
-            let result = data[id];
-            result.content = truncate(result.content, 400);
-            result.tags = result
-                .tags
-                .filter((x) => x != "gardenEntry" && x != "note"); //Note is automatically added by 11ty. GardenEntry is used internally to mark the home page
-
-            return result;
-        })
-        return finalResults;
-
-    }
-</script>
-    
-
-    <main class="content cm-s-obsidian ">
-      <header>
-        
-          <h1 data-note-icon="">Freedom for, not Freedom from</h1>
-        
-        <div class="header-meta">
-          </div>
-      
-      
-      </header>
-      
-      
-      <p>You always need a reason to do something big.<br>
+<script>document.addEventListener("DOMContentLoaded",init,!1),document.addEventListener("DOMContentLoaded",setCorrectShortcut,!1);const previewCache=new Map;window.toggleSearch=function(){const e=document.getElementById("globalsearch");e.classList.contains("active")?e.classList.remove("active"):(e.classList.add("active"),document.getElementById("term").focus())},window.toggleTagSearch=function(e){const t=e.textContent;t&&(document.getElementById("term").value=t.trim(),window.toggleSearch(),window.search())};const loadingSvg='\n    <div style="display: flex; justify-content: center; padding: 40px;">\n        <svg width="40" height="40" viewBox="0 0 45 45" xmlns="http://www.w3.org/2000/svg" stroke="currentColor">\n            <g fill="none" fill-rule="evenodd" transform="translate(1 1)" stroke-width="2">\n                <circle cx="22" cy="22" r="6" stroke-opacity="0">\n                    <animate attributeName="r" begin="1.5s" dur="3s" values="6;22" calcMode="linear" repeatCount="indefinite" />\n                    <animate attributeName="stroke-opacity" begin="1.5s" dur="3s" values="1;0" calcMode="linear" repeatCount="indefinite" />\n                    <animate attributeName="stroke-width" begin="1.5s" dur="3s" values="2;0" calcMode="linear" repeatCount="indefinite" />\n                </circle>\n                <circle cx="22" cy="22" r="6" stroke-opacity="0">\n                    <animate attributeName="r" begin="3s" dur="3s" values="6;22" calcMode="linear" repeatCount="indefinite" />\n                    <animate attributeName="stroke-opacity" begin="3s" dur="3s" values="1;0" calcMode="linear" repeatCount="indefinite" />\n                    <animate attributeName="stroke-width" begin="3s" dur="3s" values="2;0" calcMode="linear" repeatCount="indefinite" />\n                </circle>\n                <circle cx="22" cy="22" r="8">\n                    <animate attributeName="r" begin="0s" dur="1.5s" values="6;1;2;3;4;5;6" calcMode="linear" repeatCount="indefinite" />\n                </circle>\n            </g>\n        </svg>\n    </div>';function debounce(e,t,n){var r;return function(){var i=this,a=arguments,s=n&&!r;clearTimeout(r),r=setTimeout(function(){r=null,n||e.apply(i,a)},t),s&&e.apply(i,a)}}function setCorrectShortcut(){navigator.platform.toUpperCase().indexOf("MAC")>=0&&document.querySelectorAll(".search-keys").forEach(e=>e.innerHTML="<code>⌘</code>&nbsp;+&nbsp;<code>K</code>")}function tokenizeSearchTerms(e){const t=[],n=/"([^"]+)"|(\S+)/g;let r;for(;null!==(r=n.exec(e));){const e=(r[1]||r[2]).toLowerCase();e.length>1&&t.push(e)}return t.sort((e,t)=>t.length-e.length)}function highlightTerms(e,t){if(!t||0===t.length||!e)return e;let n=e;return t.forEach(e=>{const t=e.replace(/[.*+?^${}()|[\]\\]/g,"\\$&"),r=new RegExp(`(${t})`,"gi");n=n.replace(r,'<span class="search-highlight">$1</span>')}),n}function getContextualExcerpt(e,t,n=150){if(!e)return"";const r=e.replace(/<[^>]*>/g,"");if(!t||0===t.length)return truncateText(r,n);let i=r.length;if(t.forEach(e=>{const t=r.toLowerCase().indexOf(e.toLowerCase());-1!==t&&t<i&&(i=t)}),i===r.length)return truncateText(r,n);const a=Math.max(0,i-50),s=Math.min(r.length,a+n);let o=r.substring(a,s);return a>0&&(o="..."+o),s<r.length&&(o+="..."),o}function truncateText(e,t){return e?(e=e.replace(/<[^>]*>/g,"")).length<=t?e:e.substring(0,t-3)+"...":""}async function fetchPreviewContent(e){if(previewCache.has(e))return previewCache.get(e);try{const t=await fetch(e),n=await t.text(),r=new DOMParser,i=r.parseFromString(n,"text/html").querySelector(".content, .cm-s-obsidian, article, main"),a=i?i.innerHTML:"";return previewCache.set(e,a),a}catch(e){return console.error("Failed to fetch preview:",e),""}}function highlightTextNodes(e,t){if(!t||0===t.length)return;const n=document.createTreeWalker(e,NodeFilter.SHOW_TEXT,null,!1),r=[];for(;n.nextNode();)r.push(n.currentNode);r.forEach(e=>{const n=e.textContent;let r=!1;if(t.forEach(e=>{n.toLowerCase().includes(e.toLowerCase())&&(r=!0)}),r){const r=document.createElement("span");r.innerHTML=highlightTerms(n,t),e.parentNode.replaceChild(r,e)}})}async function showPreview(e){const t=window.searchResults;if(!t||!t[e])return;const n=t[e],r=document.getElementById("search-preview"),i=document.getElementById("preview-content"),a=r.querySelector(".preview-placeholder");if(!r||!i)return;document.querySelectorAll(".searchresult").forEach(e=>e.classList.remove("active"));const s=document.querySelector(`.searchresult[data-index="${e}"]`);s&&s.classList.add("active"),i.innerHTML=loadingSvg,i.classList.add("has-content"),a.style.display="none";const o=await fetchPreviewContent(n.url),c=n.tags&&n.tags.length>0?`<div class="preview-tags">${n.tags.map(e=>`<a class="tag" href="javascript:void(0);" onclick="toggleTagSearch(this)">#${e}</a>`).join("")}</div>`:"";i.innerHTML=`\n            <div class="preview-title">${highlightTerms(n.title,window.searchTerms)}</div>\n            ${c}\n            <div class="preview-body">${o}</div>\n        `;const l=i.querySelector(".preview-body");l&&window.searchTerms&&highlightTextNodes(l,window.searchTerms),window.currentPreviewIndex=e}function hidePreview(){const e=document.getElementById("search-preview"),t=document.getElementById("preview-content"),n=e?.querySelector(".preview-placeholder");n&&(n.style.display="flex"),t&&(t.classList.remove("has-content"),t.innerHTML=""),window.currentPreviewIndex=-1}function createIndex(e){const t=e=>(e=>e.toLowerCase().normalize("NFD").replace(/n\u0303/g,"ñ").replace(/[\u0300-\u036f]/g,"").normalize("NFC"))(e).split(/([^a-z]|[^\x00-\x7F])/),n=new FlexSearch.Document({cache:!0,charset:"latin:extra",optimize:!0,index:[{field:"content",tokenize:"reverse",encode:t},{field:"title",tokenize:"forward",encode:t},{field:"tags",tokenize:"forward",encode:t}]});return e.forEach((e,t)=>{n.add({id:t,title:e.title,content:e.content,tags:e.tags})}),n}async function init(){const e=await fetch("/searchIndex.json?v=2026-07-31T17:58:00.284Z").then(e=>e.json()),t=createIndex(e);function n(e){const t=document.querySelectorAll(".searchresult");if(0===t.length)return;let n,r=-1;t.forEach((e,t)=>{e.classList.contains("active")&&(r=t)}),-1===r?n=e>0?0:t.length-1:(n=r+e,n<0&&(n=t.length-1),n>=t.length&&(n=0)),t.forEach(e=>e.classList.remove("active")),t[n].classList.add("active"),t[n].scrollIntoView({behavior:"smooth",block:"nearest"}),showPreview(parseInt(t[n].dataset.index))}window.docs=e,window.index=t,document.addEventListener("keydown",e=>{if((e.ctrlKey||e.metaKey)&&"k"===e.key&&(e.preventDefault(),toggleSearch()),"Escape"===e.key&&document.getElementById("globalsearch").classList.remove("active"),document.getElementById("globalsearch").classList.contains("active")&&("ArrowDown"===e.key&&(e.preventDefault(),n(1)),"ArrowUp"===e.key&&(e.preventDefault(),n(-1)),"Enter"===e.key)){e.preventDefault();const t=document.querySelector(".searchresult.active");if(t){const e=t.dataset.url;e&&(window.location.href=e)}}});const r=debounce(search,200,!1);window.field=document.querySelector("#term"),field.addEventListener("keydown",e=>{"ArrowDown"!==e.key&&"ArrowUp"!==e.key&&"Enter"!==e.key&&r()}),window.resultsDiv=document.querySelector("#search-results");const i=new URL(location.href).searchParams;i.get("q")&&(field.setAttribute("value",i.get("q")),toggleSearch(),search())}async function search(){const e=field.value.trim(),t=document.getElementById("search-layout");if(!e)return resultsDiv.innerHTML="<span><i>Enter your search text in the box above</i></span>",hidePreview(),void(t&&t.classList.add("no-preview"));window.lastSearch=e,window.searchTerms=tokenizeSearchTerms(e),resultsDiv.innerHTML=loadingSvg,hidePreview();const n=offlineSearch(e);if(window.searchResults=n,!n.length)return t&&t.classList.add("no-preview"),void(resultsDiv.innerHTML=`\n                <div class="no-results">\n                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">\n                        <circle cx="11" cy="11" r="8"></circle>\n                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>\n                        <line x1="8" y1="11" x2="14" y2="11"></line>\n                    </svg>\n                    <p>No results for "${e}"</p>\n                </div>\n            `);t&&t.classList.remove("no-preview");let r="";n.forEach((e,t)=>{const n=highlightTerms(getContextualExcerpt(e.content,window.searchTerms,120),window.searchTerms),i=highlightTerms(e.title,window.searchTerms),a=e.tags&&e.tags.length>0?`<div class="result-tags">${e.tags.map(e=>`<span class="tag">#${e}</span>`).join("")}</div>`:"";r+=`\n                <div class="searchresult${0===t?" active":""}"\n                     data-index="${t}"\n                     data-url="${e.url}"\n                     onmouseenter="showPreview(${t})"\n                     onclick="window.location.href='${e.url}'">\n                    <span class="result-title">${i}</span>\n                    ${a}\n                    <div class="result-excerpt">${n}</div>\n                </div>\n            `}),resultsDiv.innerHTML=r,n.length>0&&showPreview(0),"undefined"!=typeof lucide&&lucide.createIcons()}function offlineSearch(e){const t=window.docs,n="#"===e[0]&&e.length>1?index.search(e.substring(1),[{field:"tags"}]):index.search(e,[{field:"title",limit:5},{field:"content",limit:10}]),r=e=>{const t=n.filter(t=>t.field===e);return 0===t.length?[]:[...t[0].result]};return[...new Set([...r("title"),...r("content"),...r("tags")])].map(e=>{const n={...t[e]};return n.tags=n.tags.filter(e=>"gardenEntry"!==e&&"note"!==e),n})}window.lastSearch="",window.searchResults=[],window.searchTerms=[],window.currentPreviewIndex=-1,window.search=search</script>
+<main class="content cm-s-obsidian print">
+<header>
+<h1 data-note-icon="">Freedom for, not Freedom from</h1>
+<div class="header-meta">
+</div>
+</header>
+<p>You always need a reason to do something big.<br>
 And often big reasons tend to involve freedom.<br>
 I argue, as others have also done, that you should choose to get freedom <em>for</em> something, instead of freedom <em>from</em> something.</p>
 <p>If you fight against some existing system, don't fight for freedom <em>from</em> that system, but fight for the freedom <em>for</em> your new system.<br>
 This re-contextualizes from destroying to creating and won't leave you empty-handed once the old system is destroyed.</p>
-
-
-      
-      <div class="giscus"></div>
-  
-      
-      <script src="https://giscus.app/client.js"
-        data-repo="fs-99/fs-99.github.io"
-        data-repo-id="R_kgDOMS2qyg"
-        data-category="General"
-        data-category-id="DIC_kwDOMS2qys4Cgpsj"
-        data-mapping="title"
-        data-strict="0"
-        data-reactions-enabled="1"
-        data-emit-metadata="0"
-        data-input-position="top"
-        data-theme="dark"
-        data-lang="en"
-        data-loading="lazy"
-        crossorigin="anonymous"
-        async></script>
-
-      
-      
-    </main>
-
-    
-      <aside>
-      <div class="sidebar">
-            <div class="sidebar-container">
-                  
-                  
-                        <script>
-    async function fetchGraphData() {
-        const graphData = await fetch('/graph.json').then(res => res.json());
-        const fullGraphData  = filterFullGraphData(graphData);
-        return {graphData, fullGraphData}
-    }
-
-    function getNextLevelNeighbours(existing, remaining) {
-        const keys = Object.values(existing).map((n) => n.neighbors).flat();
-        const n_remaining = Object.keys(remaining).reduce((acc, key) => {
-                if (keys.indexOf(key) != -1) {
-                    if (!remaining[key].hide) {
-                        existing[key] = remaining[key];
-                    }
-                } else {
-                    acc[key] = remaining[key];
-                }
-                return acc;
-            }, {});
-        return existing, n_remaining;
-    }
-
-    function filterLocalGraphData(graphData, depth) {
-        if (graphData == null) {
-            return null;
-        }
-        let remaining = JSON.parse(JSON.stringify(graphData.nodes));
-        let links = JSON.parse(JSON.stringify(graphData.links));
-        let currentLink = decodeURI(window.location.pathname);
-        let currentNode = remaining[currentLink] || Object.values(remaining).find((v) => v.home);
-        delete remaining[currentNode.url];
-        // if (!currentNode.home) {
-        //     let home = Object.values(remaining).find((v) => v.home);
-        //     delete remaining[home.url];
-        // }
-        currentNode.current = true;
-        let existing = {};
-        existing[currentNode.url] = currentNode;
-        for (let i = 0; i < depth; i++) {
-            existing, remaining = getNextLevelNeighbours(existing, remaining);
-        }
-        nodes = Object.values(existing);
-        // if (!currentNode.home) {
-        //     nodes = nodes.filter(n => !n.home);
-        // }
-        let ids = nodes.map((n) => n.id);
-        return {
-            nodes,
-            links: links.filter(function (con) {
-                return ids.indexOf(con.target) > -1 && ids.indexOf(con.source) > -1;
-            }),
-        }
-    }
-
-    function getCssVar(variable) {return getComputedStyle(document.body).getPropertyValue(variable)}
-
-    function htmlDecode(input) {
-        var doc = new DOMParser().parseFromString(input, "text/html");
-        return doc.documentElement.textContent;
-    }
-    let homeMarker = new Image();
-    // see: https://icon-sets.iconify.design/lucide/home/
-    // color is this btw: #BB9AF7
-    homeMarker.src = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAADP0lEQVRYR8VXS04bQRCtmg+2swk5QcgJ4pwAkILX9gmCFwFFURQ4AXACiLKIgAXkBLaUHUQyrLLEuYHZR4qjSLFje6bzuntmPDPM1yiiV2NPT/erV+9VVzM98OBF9785E8s/JqM9Mogsq3aw3ubhImstBKD3abQyNUWHietELgnivu1wa/1NbVAWRGkAX4//NgU7Z8S8jJ1DQwxZmO2X25VuGRClAFwej/aJac/fAPtfy2cmsQpA/t/7G69rB0VBFALQQ75n03HHIVoz57sfbGzX9uXPODBk5cqqVFtFdJEL4OJkUifhdBDgitpb0C8mYzNOtUoNueeg47GaJmhAM7PVeLvUz2IjE8DFyWgTE86CoIX4brvcTBPbN4jztyG6zPw8lKZ2Y6t2ngYiEYCkfDodH+LlZrAQ02fbqu7k0aq+nYyPwNirEIhz267uJn17B0BgMRcWg8c165QZRVJ0mj0X7MlF0q0aARBYjGAxPW4Fmc3GVnYe0+iV+mFypC2fyjmAMTRjVg0AeJNvQrRdg7ZmHuVZApPvvHR2sdGqmosHIcwXflABgMvT0Rq47mnKxYfG1qOdvMXLvL84+XOEyvneA7GOWnHl4dHLhAEAZTChzCZZc9PWT2QgDYAWqM5n2rAduk2y6b0BRDTiwhdGWL8u8HiWwZPl0LM4iHwAH6GBitZAEgORBfLykpDCfAAQIQLrybhQRO5o4PL0J0Ra1QAF75IhoiVW1g0Wh4UCCK1fWAN5Ip2/R3qYEwKYuyzMcBQAbKvO+BIU+tkoDjC6/n9goEgAFhiyo3XgCzRQhQYUAQsxMIVGZsVEnKQBH0CWiKRIldkWAlhEA14pTtygjE2zAMqkj+GydyVLsS8yVXIehIHQYZWaAsftkYEklQCY6AIWRive8y1qM9+mutdwO3GNJdtQiK61VGuHe4FyAMaw2RNlMzlUVz0ZybtEMxWAmjQbD1CIVFebOrxzx7+T5LbV/kL+eYWuGu2833HJ/mQ+4l1wGojI2Rc9CL1PdDmN7y1/x/vLOwGoY1c4TRwsddz5AqTa/rgboOEXzAMiXFMouKZ4zOq7AzbB+/nAzWmIj/qCzW68vyzMYGZa7vHyH+UuPz8c4wZRAAAAAElFTkSuQmCC";
-
-    function renderGraph(graphData, id, delay, fullScreen) {
-        if (graphData == null) {
-            return;
-        }
-        const el = document.getElementById(id);
-        width = el.offsetWidth;
-        height = el.offsetHeight;
-        const highlightNodes = new Set();
-        let hoverNode = null;
-        const color = getCssVar("--graph-main");
-        const mutedColor = getCssVar("--graph-muted");
-        let Graph = ForceGraph()
-        (el)
-            .graphData(graphData)
-            .nodeId('id')
-            .nodeLabel('title')
-            .linkSource('source')
-            .linkTarget('target')
-            .d3AlphaDecay(0.10)
-            .width(width)
-            .height(height)
-            .linkDirectionalArrowLength(2)
-            .linkDirectionalArrowRelPos(0.5)
-            .autoPauseRedraw(false)
-            .linkColor((link) => {
-                if (hoverNode == null) {
-                    return color;
-                }
-                if (link.source.id == hoverNode.id || link.target.id == hoverNode.id) {
-                    return mutedColor;
-                } else {
-                    return color;
-                }
-                
-            })
-            .nodeCanvasObject((node, ctx) => {
-                const numberOfNeighbours = (node.neighbors && node.neighbors.length) || 2;
-                const nodeR = Math.min(7, Math.max(numberOfNeighbours / 2, 2));
-                
-                ctx.beginPath();
-                ctx.arc(node.x, node.y, nodeR, 0, 2 * Math.PI, false);
-                if (hoverNode == null) {
-                    ctx.fillStyle = color;
-                } else {
-                    if (node == hoverNode || highlightNodes.has(node.url)) {
-                        ctx.fillStyle = mutedColor;
-                    } else {
-                        ctx.fillStyle = color;
-                    }
-                }
-                
-                if (!node.home) {
-                    ctx.fill();
-                }
-                
-                if (node.current) {
-                    ctx.beginPath();
-                    ctx.arc(node.x, node.y, nodeR + 1, 0, 2 * Math.PI, false);
-                    ctx.lineWidth = 0.5;
-                    ctx.strokeStyle = "#fafafa";
-                    ctx.fillStyle = "#fafafa";
-                    ctx.stroke();
-                }
-
-                if (node.home) {
-                    ctx.beginPath();
-                    let width = 5;
-                    let height = 5;
-                    // NOTE: homeMarker must have loaded by now
-                    ctx.drawImage(homeMarker, node.x - width/2, node.y - height/2, width, height);
-                }
-
-                const label = htmlDecode(node.title)
-                const fontSize = 3.5;
-                ctx.font = `${fontSize}px Sans-Serif`;
-
-                ctx.textAlign = 'center';
-                ctx.textBaseline = 'top';
-                ctx.fillText(label, node.x, node.y + nodeR + 2);
-            })
-            .onNodeClick(node => {
-                window.location = node.url;
-            })
-            .onNodeHover(node => {
-                highlightNodes.clear();
-                if (node) {
-                highlightNodes.add(node);
-                node.neighbors.forEach(neighbor => highlightNodes.add(neighbor));
-                }
-                hoverNode = node || null;
-                
-            });
-            if (fullScreen || (delay != null && graphData.nodes.length > 4)) {
-                setTimeout(() => {
-                    Graph.zoomToFit(5, 75);
-                }, delay || 200);
-            }
-        return Graph;
-    }
-
-    function renderLocalGraph(graphData, depth, fullScreen) {
-        if (window.graph){
-            window.graph._destructor();
-        }
-        const data = filterLocalGraphData(graphData, depth);
-        window.graph = renderGraph(data, 'link-graph', null, fullScreen);
-    }
-
-    function filterFullGraphData(graphData) {
-        if (graphData == null) {
-            return null;
-        }
-        graphData = JSON.parse(JSON.stringify(graphData));
-        const hiddens = Object.values(graphData.nodes).filter((n) => n.hide).map((n) => n.id);
-        const data = {
-            links: JSON.parse(JSON.stringify(graphData.links)).filter((l) => hiddens.indexOf(l.source) == -1 && hiddens.indexOf(l.target) == -1),
-            nodes: [...Object.values(graphData.nodes).filter((n) => !n.hide)]
-        }
-        return data
-    }
-
-    function openFullGraph(fullGraphData) {
-        lucide.createIcons({
-                attrs: {
-                    class: ["svg-icon"]
-                }
-            });
-        return renderGraph(fullGraphData, "full-graph-container", 200, false);;
-    }
-
-    function closefullGraph(fullGraph) {
-        if (fullGraph) {
-            fullGraph._destructor();
-        }
-        return null;
-    }
-
-    const dataInner = { graphData: null, depth: 1, graph: null, fullGraph: null, showFullGraph: false, fullScreen: false, fullGraphData: null };
-    const data = new Proxy(dataInner, {
-        set: function (target, key, value) {
-            target[key] = value;
-            if (key === "fullScreen") {
-                document.getElementById("graph-component").className = value ? 'graph graph-fs' : 'graph';
-            }
-            if (key === "graphData" || key === "depth" || key === "fullScreen") {
-                // NOTE: assumes we keep the target[key] = value line above
-                renderLocalGraph(data.graphData, data.depth, data.fullScreen);
-            }
-            if (key === "showFullGraph") {
-                if (value) {
-                    document.getElementById("full-graph").style.display = "";
-                } else {
-                    document.getElementById("full-graph").style.display = "none";
-                }
-            }
-
-            return true
-        }
-    });
-
-    window.onload = async () => {
-        document.getElementById("graph-depth").value = data.depth;
-        document.getElementById("depth-display").innerText = data.depth;
-        data.fullScreen = false;
-
-        // fetch data
-        const {graphData, fullGraphData} = await fetchGraphData();
-        data.graphData = graphData;
-        data.fullGraphData = fullGraphData;
-
-        // modify data based on events
-        document.getElementById("graph-depth").addEventListener("input", (event) => {
-            let depth = event.target.value;
-            data.depth = Number(depth);
-            document.getElementById("depth-display").innerText = depth;
-        });
-        document.getElementById("global-graph-btn").addEventListener("click", (event) => {
-            data.showFullGraph = true;
-            setTimeout(() => {data.fullGraph = openFullGraph(fullGraphData)}, 100);
-        });
-        document.getElementById("graph-fs-btn").addEventListener("click", (event) => {
-            data.fullScreen = !data.fullScreen
-        });
-        document.getElementById("full-graph-close").addEventListener("click", (event) => {
-            data.fullGraph = closefullGraph(data.fullGraph);
-            data.showFullGraph = false;
-        });
-    }
-</script>
-<div id="graph-component" v-scope>
-    <div class="graph-title-container">
-        <div class="graph-title">Connected Pages</div>
-        <div id="graph-controls">
-                <div class="depth-control">
-                    <label for="graph-depth">Depth</label>
-                    <div class="slider">
-                            <input name="graph-depth" list="depthmarkers" type="range" step="1" min="1" max="3" id="graph-depth">
-                    <datalist id="depthmarkers">
-                            <option value="1" label="1"></option>
-                            <option value="2" label="2"></option>
-                            <option value="3" label="3"></option>
-                    </datalist>
-                    </div>
-                    <span id="depth-display"></span>
-                </div>
-                <div class="ctrl-right">
-                    <span id="global-graph-btn"><i  icon-name="globe" aria-hidden="true"></i></span>
-                    <span id="graph-fs-btn"><i  icon-name="expand" aria-hidden="true"></i></span>
-                </div>
-        </div>
-    </div>
-    <div id="link-graph" ></div>
-    <div id="full-graph" class="show" style="display: none;">
-        <span id="full-graph-close"><i icon-name="x" aria-hidden="true"></i></span><div id="full-graph-container"></div>
-    </div>
+<div class="giscus"></div>
+<script src="https://giscus.app/client.js" data-repo="fs-99/fs-99.github.io" data-repo-id="R_kgDOMS2qyg" data-category="General" data-category-id="DIC_kwDOMS2qys4Cgpsj" data-mapping="title" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="dark" data-lang="en" data-loading="lazy" crossorigin="anonymous" async></script>
+</main>
+<aside>
+<div class="sidebar">
+<div class="sidebar-container">
+<script>async function fetchGraphData(){const e=await fetch("/graph.json").then(e=>e.json());return{graphData:e,fullGraphData:filterFullGraphData(e)}}function getNextLevelNeighbours(e,t){const a=Object.values(e).map(e=>e.neighbors).flat();return Object.keys(t).reduce((n,l)=>(-1!=a.indexOf(l)?t[l].hide||(e[l]=t[l]):n[l]=t[l],n),{})}function filterLocalGraphData(e,t){if(null==e)return null;let a=JSON.parse(JSON.stringify(e.nodes)),n=JSON.parse(JSON.stringify(e.links)),l=a[decodeURI(window.location.pathname)]||Object.values(a).find(e=>e.home);delete a[l.url],l.current=!0;let r={};r[l.url]=l;for(let e=0;e<t;e++)a=getNextLevelNeighbours(r,a);nodes=Object.values(r);let o=nodes.map(e=>e.id);return{nodes:nodes,links:n.filter(function(e){return o.indexOf(e.target)>-1&&o.indexOf(e.source)>-1})}}function getCssVar(e){return getComputedStyle(document.body).getPropertyValue(e)}function htmlDecode(e){return(new DOMParser).parseFromString(e,"text/html").documentElement.textContent}let homeMarker=new Image;function renderGraph(e,t,a,n){if(null==e)return;const l=document.getElementById(t);width=l.offsetWidth,height=l.offsetHeight;const r=new Set;let o=null;const d=getCssVar("--graph-main"),i=getCssVar("--graph-muted");let u=ForceGraph()(l).graphData(e).nodeId("id").nodeLabel("title").linkSource("source").linkTarget("target").d3AlphaDecay(.1).width(width).height(height).linkDirectionalArrowLength(2).linkDirectionalArrowRelPos(.5).autoPauseRedraw(!1).linkColor(e=>null==o?d:e.source.id==o.id||e.target.id==o.id?i:d).nodeCanvasObject((e,t)=>{const a=e.neighbors&&e.neighbors.length||2,n=Math.min(7,Math.max(a/2,2));if(t.beginPath(),t.arc(e.x,e.y,n,0,2*Math.PI,!1),null==o?t.fillStyle=d:e==o||r.has(e.url)?t.fillStyle=i:t.fillStyle=d,e.home||t.fill(),e.current&&(t.beginPath(),t.arc(e.x,e.y,n+1,0,2*Math.PI,!1),t.lineWidth=.5,t.strokeStyle="#fafafa",t.fillStyle="#fafafa",t.stroke()),e.home){t.beginPath();let a=5,n=5;t.drawImage(homeMarker,e.x-a/2,e.y-n/2,a,n)}const l=htmlDecode(e.title);t.font="3.5px Sans-Serif",t.textAlign="center",t.textBaseline="top",t.fillText(l,e.x,e.y+n+2)}).onNodeClick(e=>{window.location=e.url}).onNodeHover(e=>{r.clear(),e&&(r.add(e),e.neighbors.forEach(e=>r.add(e))),o=e||null});return(n||null!=a&&e.nodes.length>4)&&setTimeout(()=>{u.zoomToFit(5,75)},a||200),u}function renderLocalGraph(e,t,a){window.graph&&window.graph._destructor();const n=filterLocalGraphData(e,t);window.graph=renderGraph(n,"link-graph",null,a)}function filterFullGraphData(e){if(null==e)return null;e=JSON.parse(JSON.stringify(e));const t=Object.values(e.nodes).filter(e=>e.hide).map(e=>e.id);return{links:JSON.parse(JSON.stringify(e.links)).filter(e=>-1==t.indexOf(e.source)&&-1==t.indexOf(e.target)),nodes:[...Object.values(e.nodes).filter(e=>!e.hide)]}}function openFullGraph(e){return lucide.createIcons({attrs:{class:["svg-icon"]}}),requestAnimationFrame(()=>{requestAnimationFrame(()=>{data.fullGraph=renderGraph(e,"full-graph-container",200,!1)})}),null}function closefullGraph(e){return e&&e._destructor(),null}homeMarker.src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAADP0lEQVRYR8VXS04bQRCtmg+2swk5QcgJ4pwAkILX9gmCFwFFURQ4AXACiLKIgAXkBLaUHUQyrLLEuYHZR4qjSLFje6bzuntmPDPM1yiiV2NPT/erV+9VVzM98OBF9785E8s/JqM9Mogsq3aw3ubhImstBKD3abQyNUWHietELgnivu1wa/1NbVAWRGkAX4//NgU7Z8S8jJ1DQwxZmO2X25VuGRClAFwej/aJac/fAPtfy2cmsQpA/t/7G69rB0VBFALQQ75n03HHIVoz57sfbGzX9uXPODBk5cqqVFtFdJEL4OJkUifhdBDgitpb0C8mYzNOtUoNueeg47GaJmhAM7PVeLvUz2IjE8DFyWgTE86CoIX4brvcTBPbN4jztyG6zPw8lKZ2Y6t2ngYiEYCkfDodH+LlZrAQ02fbqu7k0aq+nYyPwNirEIhz267uJn17B0BgMRcWg8c165QZRVJ0mj0X7MlF0q0aARBYjGAxPW4Fmc3GVnYe0+iV+mFypC2fyjmAMTRjVg0AeJNvQrRdg7ZmHuVZApPvvHR2sdGqmosHIcwXflABgMvT0Rq47mnKxYfG1qOdvMXLvL84+XOEyvneA7GOWnHl4dHLhAEAZTChzCZZc9PWT2QgDYAWqM5n2rAduk2y6b0BRDTiwhdGWL8u8HiWwZPl0LM4iHwAH6GBitZAEgORBfLykpDCfAAQIQLrybhQRO5o4PL0J0Ra1QAF75IhoiVW1g0Wh4UCCK1fWAN5Ip2/R3qYEwKYuyzMcBQAbKvO+BIU+tkoDjC6/n9goEgAFhiyo3XgCzRQhQYUAQsxMIVGZsVEnKQBH0CWiKRIldkWAlhEA14pTtygjE2zAMqkj+GydyVLsS8yVXIehIHQYZWaAsftkYEklQCY6AIWRive8y1qM9+mutdwO3GNJdtQiK61VGuHe4FyAMaw2RNlMzlUVz0ZybtEMxWAmjQbD1CIVFebOrxzx7+T5LbV/kL+eYWuGu2833HJ/mQ+4l1wGojI2Rc9CL1PdDmN7y1/x/vLOwGoY1c4TRwsddz5AqTa/rgboOEXzAMiXFMouKZ4zOq7AzbB+/nAzWmIj/qCzW68vyzMYGZa7vHyH+UuPz8c4wZRAAAAAElFTkSuQmCC";const dataInner={graphData:null,depth:1,graph:null,fullGraph:null,showFullGraph:!1,fullScreen:!1,fullGraphData:null};let pendingLocalRender=null;const scheduleLocalRender=()=>{pendingLocalRender&&cancelAnimationFrame(pendingLocalRender),pendingLocalRender=requestAnimationFrame(()=>{pendingLocalRender=requestAnimationFrame(()=>{pendingLocalRender=null,renderLocalGraph(data.graphData,data.depth,data.fullScreen)})})},data=new Proxy(dataInner,{set:function(e,t,a){if(e[t]=a,"fullScreen"===t&&(document.getElementById("graph-component").className=a?"graph graph-fs":"graph"),"graphData"!==t&&"depth"!==t&&"fullScreen"!==t||scheduleLocalRender(),"showFullGraph"===t){const e=document.getElementById("full-graph");a?(e.classList.add("is-open"),e.style.display="block"):(e.classList.remove("is-open"),e.style.display="none")}return!0}});window.onload=async()=>{document.getElementById("graph-depth").value=data.depth,document.getElementById("depth-display").innerText=data.depth,data.fullScreen=!1;const{graphData:e,fullGraphData:t}=await fetchGraphData();data.graphData=e,data.fullGraphData=t,document.getElementById("graph-depth").addEventListener("input",e=>{let t=e.target.value;data.depth=Number(t),document.getElementById("depth-display").innerText=t}),document.getElementById("global-graph-btn").addEventListener("click",e=>{e.stopPropagation(),data.showFullGraph=!0,openFullGraph(t)}),document.getElementById("graph-fs-btn").addEventListener("click",e=>{e.stopPropagation(),data.fullScreen=!data.fullScreen}),document.getElementById("full-graph-close").addEventListener("click",e=>{e.stopPropagation(),data.fullGraph=closefullGraph(data.fullGraph),data.showFullGraph=!1});const a=document.getElementById("graph-component"),n=document.getElementById("full-graph");document.addEventListener("click",e=>{if(data.showFullGraph&&n&&!n.contains(e.target))return data.fullGraph=closefullGraph(data.fullGraph),void(data.showFullGraph=!1);data.fullScreen&&a&&!a.contains(e.target)&&(data.fullScreen=!1)}),lucide.createIcons({attrs:{class:["svg-icon"],width:"24",height:"24"}})}</script>
+<div id="graph-component" class="graph">
+<div class="graph-title-container">
+<div class="graph-title">Connected Pages</div>
+<div id="graph-controls">
+<div class="depth-control">
+<label for="graph-depth">Depth</label>
+<div class="slider">
+<input name="graph-depth" list="depthmarkers" type="range" step="1" min="1" max="3" id="graph-depth">
+<datalist id="depthmarkers">
+<option value="1" label="1"></option>
+<option value="2" label="2"></option>
+<option value="3" label="3"></option>
+</datalist>
 </div>
-                  
-
-                  
-
-                        
-                  
-            </div>
-      </div>
+<span id="depth-display"></span>
+</div>
+<div class="ctrl-right">
+<span id="global-graph-btn"><i data-lucide="globe" aria-hidden="true"></i></span>
+<span id="graph-fs-btn"><i data-lucide="expand" aria-hidden="true"></i></span>
+</div>
+</div>
+</div>
+<div id="link-graph"></div>
+<div id="full-graph" style="display:none">
+<span id="full-graph-close"><i data-lucide="x" aria-hidden="true"></i></span><div id="full-graph-container"></div>
+</div>
+</div>
+</div>
+</div>
 </aside>
-    
-
-    
-      
-<style>
-#tooltip-wrapper {
-  background: var(--background-primary);
-  padding: 1em;
-  border-radius: 4px;
-  overflow: hidden;
-  position: fixed;
-  width: 80%;
-  max-width: 400px;
-  height: auto;
-  max-height: 300px;
-  font-size: 0.8em;
-  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-  opacity: 0;
-  transition: opacity 100ms;
-  unicode-bidi: plaintext;
-  overflow-y: scroll;
-  z-index: 10;
-}
-
-#tooltip-wrapper:after {
-  content: "";
-  position: absolute;
-  z-index: 1;
-  bottom: 0;
-  left: 0;
-  pointer-events: none;
-  width: 100%;
-  unicode-bidi: plaintext;
-  height: 75px;
-}
-</style>
-<div style="opacity: 0; display: none;" id='tooltip-wrapper'>
-  <div id='tooltip-content'>
-  </div>
+<style>#tooltip-wrapper{background:var(--background-primary);padding:1em;border-radius:4px;overflow:hidden;position:fixed;width:80%;max-width:400px;height:auto;max-height:300px;font-size:.8em;box-shadow:0 5px 10px rgba(0,0,0,.1);opacity:0;transition:opacity .1s;unicode-bidi:plaintext;overflow-y:scroll;z-index:10}#tooltip-wrapper:after{content:"";position:absolute;z-index:1;bottom:0;left:0;pointer-events:none;width:100%;unicode-bidi:plaintext;height:75px}.tooltip-pdf{width:100%;height:260px;border:0}</style>
+<div style="opacity:0;display:none" id="tooltip-wrapper">
+<div id="tooltip-content">
 </div>
-
-<iframe style="display: none; height: 0; width: 0;" id='link-preview-iframe' src="">
+</div>
+<iframe style="display:none;height:0;width:0" id="link-preview-iframe" src="">
 </iframe>
-
-<script>
-  var opacityTimeout;
-  var contentTimeout;
-  var transitionDurationMs = 100;
-
-  var iframe = document.getElementById('link-preview-iframe')
-  var tooltipWrapper = document.getElementById('tooltip-wrapper')
-  var tooltipContent = document.getElementById('tooltip-content')
-
-  var linkHistories = {};
-
-  function hideTooltip() {
-    opacityTimeout = setTimeout(function () {
-      tooltipWrapper.style.opacity = 0;
-      contentTimeout = setTimeout(function () {
-        tooltipContent.innerHTML = '';
-        tooltipWrapper.style.display = 'none';
-      }, transitionDurationMs + 1);
-    }, transitionDurationMs)
-  }
-
-  function showTooltip(event) {
-    var elem = event.target;
-    var elem_props = elem.getClientRects()[elem.getClientRects().length - 1];
-    var top = window.pageYOffset || document.documentElement.scrollTop;
-    var url = event.target.getAttribute("href");
-    if (url.indexOf("http") === -1 || url.indexOf(window.location.host) !== -1) {
-      let contentURL = url.split('#')[0]
-      if (!linkHistories[contentURL]) {
-        iframe.src = contentURL
-        iframe.onload = function () {
-          tooltipContentHtml = ''
-          tooltipContentHtml += '<div style="font-weight: bold; unicode-bidi: plaintext;">' + iframe.contentWindow.document.querySelector('h1').innerHTML + '</div>'
-          tooltipContentHtml += iframe.contentWindow.document.querySelector('.content').innerHTML
-          tooltipContent.innerHTML = tooltipContentHtml
-          linkHistories[contentURL] = tooltipContentHtml
-          tooltipWrapper.style.display = 'block';
-          tooltipWrapper.scrollTop = 0;
-          setTimeout(function () {
-            tooltipWrapper.style.opacity = 1;
-            if (url.indexOf("#") != -1) {
-              let id = url.split('#')[1];
-              const focus = tooltipWrapper.querySelector(`[id='${id}']`);
-              focus.classList.add('referred');
-              console.log(focus);
-              focus.scrollIntoView({behavior: 'smooth'}, true)
-            } else {
-              tooltipWrapper.scroll(0, 0);
-            }
-          }, 1)
-        }
-      } else {
-        tooltipContent.innerHTML = linkHistories[contentURL]
-        tooltipWrapper.style.display = 'block';
-        setTimeout(function () {
-          tooltipWrapper.style.opacity = 1;
-          if (url.indexOf("#") != -1) {
-              let id = url.split('#')[1];
-              const focus = tooltipWrapper.querySelector(`[id='${id}']`);
-              focus.classList.add('referred');
-              focus.scrollIntoView({behavior: 'smooth'}, true)
-          } else {
-              tooltipWrapper.scroll(0, 0);
-          }
-        }, 1)
-      }
-
-      function getInnerWidth(elem) {
-        var style = window.getComputedStyle(elem);
-        return elem.offsetWidth - parseFloat(style.paddingLeft) - parseFloat(style.paddingRight) - parseFloat(style.borderLeft) - parseFloat(style.borderRight) - parseFloat(style.marginLeft) - parseFloat(style.marginRight);
-      }
-
-      tooltipWrapper.style.left = elem_props.left - (tooltipWrapper.offsetWidth / 2) + (elem_props.width / 2) + "px";
-
-      if ((window.innerHeight - elem_props.top) < (tooltipWrapper.offsetHeight)) {
-        tooltipWrapper.style.top = elem_props.top + top - tooltipWrapper.offsetHeight - 10 + "px";
-      } else if ((window.innerHeight - elem_props.top) > (tooltipWrapper.offsetHeight)) {
-        tooltipWrapper.style.top = elem_props.top + top + 35 + "px";
-      }
-
-      if ((elem_props.left + (elem_props.width / 2)) < (tooltipWrapper.offsetWidth / 2)) {
-        tooltipWrapper.style.left = "10px";
-      } else if ((document.body.clientWidth - elem_props.left - (elem_props.width / 2)) < (tooltipWrapper.offsetWidth / 2)) {
-        tooltipWrapper.style.left = document.body.clientWidth - tooltipWrapper.offsetWidth - 20 + "px";
-      }
-    }
-  }
-
-  function setupListeners(linkElement) {
-    linkElement.addEventListener('mouseleave', function (_event) {
-      hideTooltip();
-    });
-
-    tooltipWrapper.addEventListener('mouseleave', function (_event) {
-      hideTooltip();
-    });
-
-    linkElement.addEventListener('mouseenter', function (event) {
-      clearTimeout(opacityTimeout);
-      clearTimeout(contentTimeout);
-      showTooltip(event);
-    });
-
-    tooltipWrapper.addEventListener('mouseenter', function (event) {
-      clearTimeout(opacityTimeout);
-      clearTimeout(contentTimeout);
-    });
-  }
-
-  window.addEventListener("load", function(event) 
-  {
-    document.querySelectorAll('.internal-link').forEach(setupListeners);
-    document.querySelectorAll('.backlink-card a').forEach(setupListeners);
-  });
-</script>
-
-    
-        <script>
-      if (window.location.hash) {
-        document.getElementById(window.location.hash.slice(1)).classList.add('referred');
-      }
-      window.addEventListener('hashchange', (evt) => {
-        const oldParts = evt.oldURL.split("#");
-        if (oldParts[1]) {
-          document.getElementById(oldParts[1]).classList.remove('referred');
-        }
-        const newParts = evt.newURL.split("#");
-        if (newParts[1]) {
-          document.getElementById(newParts[1]).classList.add('referred');
-        }
-      }, false);
-      const url_parts = window.location.href.split("#")
-      const url = url_parts[0];
-      const referrence = url_parts[1];
-      document.querySelectorAll(".cm-s-obsidian > *[id]").forEach(function (el) {
-        el.ondblclick = function(evt) {
-          const ref_url = url + '#' + evt.target.id
-          navigator.clipboard.writeText(ref_url);
-      }
-      });
-
-      
-    </script>
-    <script src=" https://fastly.jsdelivr.net/npm/luxon@3.2.1/build/global/luxon.min.js "></script>
-<script defer>
-  TIMESTAMP_FORMAT = "MMM dd, yyyy h:mm a";
-  document.querySelectorAll('.human-date').forEach(function (el) {
-    date = el.getAttribute('data-date') || el.innerText
-    parsed_date = luxon.DateTime.fromISO(date)
-    if (parsed_date.invalid != null){
-      // Date cannot be parsed
-      parsed_date = luxon.DateTime.fromSQL(date)
-    }
-    if (parsed_date.invalid != null){
-      // Date still cannot be parsed
-      parsed_date = luxon.DateTime.fromHTML(date)
-    }
-    el.innerHTML = parsed_date.toFormat(TIMESTAMP_FORMAT);
-  })
-</script>
-    
-    
-    <script>
-lucide.createIcons({
-            attrs: {
-                class: ["svg-icon"]
-            }
-        });
-</script>
-  </body>
+<script>var opacityTimeout,contentTimeout,transitionDurationMs=100,iframe=document.getElementById("link-preview-iframe"),tooltipWrapper=document.getElementById("tooltip-wrapper"),tooltipContent=document.getElementById("tooltip-content"),linkHistories={};function hideTooltip(){opacityTimeout=setTimeout(function(){tooltipWrapper.style.opacity=0,contentTimeout=setTimeout(function(){tooltipContent.innerHTML="",tooltipWrapper.style.display="none"},transitionDurationMs+1)},transitionDurationMs)}function positionTooltip(t){var o=t.getClientRects()[t.getClientRects().length-1],e=document.documentElement.clientWidth,i=window.innerHeight,p=12,n=10,l=(o.top,i-(o.top+o.height)),r=(o.left,e-(o.left+o.width)),s=l>=tooltipWrapper.offsetHeight+p?"bottom":"top",a=r>=tooltipWrapper.offsetWidth+p?"right":"left";tooltipWrapper.style.top="bottom"===s?o.top+o.height+p+"px":o.top-tooltipWrapper.offsetHeight-p+"px",tooltipWrapper.style.left="right"===a?o.left+o.width+p+"px":o.left-tooltipWrapper.offsetWidth-p+"px";var c=parseFloat(tooltipWrapper.style.top),f=parseFloat(tooltipWrapper.style.left);c<n?tooltipWrapper.style.top="10px":c+tooltipWrapper.offsetHeight+n>i&&(tooltipWrapper.style.top=i-tooltipWrapper.offsetHeight-n+"px"),f<n?tooltipWrapper.style.left="10px":f+tooltipWrapper.offsetWidth+n>e&&(tooltipWrapper.style.left=e-tooltipWrapper.offsetWidth-n+"px")}function showTooltip(t){var o=t.currentTarget||t.target;if(o){var e=o.getAttribute("href");if(-1===e.indexOf("http")||-1!==e.indexOf(window.location.host)){tooltipWrapper.style.display="block",tooltipWrapper.style.opacity=0,positionTooltip(o);let t=e.split("#")[0];if(t.toLowerCase().endsWith(".pdf"))return tooltipContent.innerHTML='<iframe class="tooltip-pdf" src="'+t+'"></iframe>',tooltipWrapper.scrollTop=0,void setTimeout(function(){positionTooltip(o),tooltipWrapper.style.opacity=1},1);if(/\.(png|jpg|jpeg|gif|webp|svg)$/i.test(t))return tooltipContent.innerHTML='<img src="'+t+'" style="max-width:100%;height:auto;" />',tooltipWrapper.scrollTop=0,void setTimeout(function(){positionTooltip(o),tooltipWrapper.style.opacity=1},1);linkHistories[t]?(tooltipContent.innerHTML=linkHistories[t],setTimeout(function(){if(positionTooltip(o),tooltipWrapper.style.opacity=1,-1!=e.indexOf("#")){let t=e.split("#")[1];const o=tooltipWrapper.querySelector(`[id='${t}']`);o.classList.add("referred"),o.scrollIntoView({behavior:"smooth"},!0)}else tooltipWrapper.scroll(0,0)},1)):(iframe.src=t,iframe.onload=function(){let i,p;try{i=iframe.contentWindow,p=i?i.document:null}catch(t){return tooltipContent.innerHTML="<div>Preview not available for this file.</div>",tooltipWrapper.scrollTop=0,void setTimeout(function(){positionTooltip(o),tooltipWrapper.style.opacity=1},1)}if(!p)return;const n=p.querySelector("h1"),l=p.querySelector(".content");if(tooltipContentHtml="",n&&(tooltipContentHtml+='<div style="font-weight: bold; unicode-bidi: plaintext;">'+n.innerHTML+"</div>"),l)tooltipContentHtml+=l.innerHTML;else if(p.body)tooltipContentHtml+=p.body.innerHTML;else{if(!p.documentElement)return;tooltipContentHtml+=p.documentElement.innerHTML}tooltipContent.innerHTML=tooltipContentHtml,linkHistories[t]=tooltipContentHtml,tooltipWrapper.scrollTop=0,setTimeout(function(){if(positionTooltip(o),tooltipWrapper.style.opacity=1,-1!=e.indexOf("#")){let t=e.split("#")[1];const o=tooltipWrapper.querySelector(`[id='${t}']`);o.classList.add("referred"),console.log(o),o.scrollIntoView({behavior:"smooth"},!0)}else tooltipWrapper.scroll(0,0)},1)}),positionTooltip(o)}}}function setupListeners(t){t.addEventListener("mouseleave",function(t){hideTooltip()}),tooltipWrapper.addEventListener("mouseleave",function(t){hideTooltip()}),t.addEventListener("mouseenter",function(t){clearTimeout(opacityTimeout),clearTimeout(contentTimeout),showTooltip(t)}),tooltipWrapper.addEventListener("mouseenter",function(t){clearTimeout(opacityTimeout),clearTimeout(contentTimeout)})}window.addEventListener("load",function(t){document.querySelectorAll(".internal-link").forEach(setupListeners),document.querySelectorAll(".backlink-card a").forEach(setupListeners)})</script>
+<script>window.location.hash&&document.getElementById(window.location.hash.slice(1)).classList.add("referred"),window.addEventListener("hashchange",e=>{const t=e.oldURL.split("#");t[1]&&document.getElementById(t[1]).classList.remove("referred");const n=e.newURL.split("#");n[1]&&document.getElementById(n[1]).classList.add("referred")},!1);const url_parts=window.location.href.split("#"),url=url_parts[0],referrence=url_parts[1];document.querySelectorAll(".cm-s-obsidian > *[id]").forEach(function(e){e.ondblclick=function(e){const t=url+"#"+e.target.id;navigator.clipboard.writeText(t)}})</script>
+<script src="https://fastly.jsdelivr.net/npm/luxon@3.2.1/build/global/luxon.min.js"></script>
+<script defer="defer">TIMESTAMP_FORMAT="MMM dd, yyyy h:mm a",document.querySelectorAll(".human-date").forEach(function(e){date=e.getAttribute("data-date")||e.innerText,parsed_date=luxon.DateTime.fromISO(date),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromSQL(date)),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromHTML(date)),e.innerHTML=parsed_date.toFormat(TIMESTAMP_FORMAT)})</script>
+<script defer="defer" src="https://unpkg.com/lucide@latest"></script>
+<script defer="defer">document.addEventListener("DOMContentLoaded",()=>{lucide.createIcons({attrs:{class:["svg-icon"]}})})</script>
+<script>document.addEventListener("DOMContentLoaded",function(){document.querySelectorAll(".obsidian-bases-views").forEach(function(e){var t=e.querySelector(".obsidian-bases-active-view"),a=e.querySelector(".obsidian-bases-dropdown"),i=e.querySelectorAll(".obsidian-bases-dropdown-item"),n=e.querySelectorAll(".obsidian-bases-view-panel"),o=e.querySelector(".obsidian-bases-active-view-name"),r=e.querySelector(".obsidian-bases-count-value");t&&a&&(t.addEventListener("click",function(e){e.stopPropagation();var i="none"!==a.style.display;a.style.display=i?"none":"block",t.setAttribute("aria-expanded",!i)}),document.addEventListener("click",function(){a.style.display="none",t.setAttribute("aria-expanded","false")}),i.forEach(function(s){s.addEventListener("click",function(s){s.stopPropagation();var d=this.getAttribute("data-view-index");i.forEach(function(e){e.classList.remove("active")}),this.classList.add("active"),n.forEach(function(e){e.style.display="none"});var l=e.querySelector('.obsidian-bases-view-panel[data-view-index="'+d+'"]');l&&(l.style.display="block");var c=this.querySelector(".obsidian-bases-view-icon"),u=t.querySelector(".obsidian-bases-view-icon");if(c&&u&&u.replaceWith(c.cloneNode(!0)),o&&(o.textContent=this.textContent.trim()),r&&l){var b=l.querySelectorAll("tbody tr:not(.obsidian-base-group-row), .obsidian-base-card, .obsidian-base-list li");r.textContent=b.length}a.style.display="none",t.setAttribute("aria-expanded","false")})}))}),document.querySelectorAll(".bases-dynamic-date").forEach(function(e){var t=e.getAttribute("data-type"),a=new Date;if("today"===t){var i=a.getFullYear(),n=String(a.getMonth()+1).padStart(2,"0"),o=String(a.getDate()).padStart(2,"0");e.textContent=i+"-"+n+"-"+o}else if("now"===t){i=a.getFullYear(),n=String(a.getMonth()+1).padStart(2,"0"),o=String(a.getDate()).padStart(2,"0");var r=String(a.getHours()).padStart(2,"0"),s=String(a.getMinutes()).padStart(2,"0");e.textContent=i+"-"+n+"-"+o+" "+r+":"+s}})})</script>
+</body>
 </html>

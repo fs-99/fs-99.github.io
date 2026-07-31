@@ -1,4 +1,4 @@
-const fsFileTree = require("fs-file-tree");
+const fs = require("fs/promises");
 
 const BASE_PATH = "src/site/_includes/components/user";
 const STYLE_PATH = "src/site/styles/user";
@@ -10,13 +10,18 @@ const SIDEBAR_NAMESPACE = "sidebar";
 const SIDEBAR_SLOTS = ["top", "bottom"];
 const STYLES_NAMESPACE = "styles";
 
+const listFiles = async (dir) => {
+  const entries = await fs.readdir(dir, { withFileTypes: true });
+  return entries.filter((entry) => entry.isFile()).map((entry) => entry.name);
+};
+
 const generateComponentPaths = async (namespace, slots) => {
   const data = {};
   for (let index = 0; index < slots.length; index++) {
     const slot = slots[index];
     try {
-      const tree = await fsFileTree(`${BASE_PATH}/${namespace}/${slot}`);
-      let comps = Object.keys(tree)
+      const files = await listFiles(`${BASE_PATH}/${namespace}/${slot}`);
+      let comps = files
         .filter((p) => p.indexOf(".njk") != -1)
         .map((p) => `components/user/${namespace}/${slot}/${p}`);
       comps.sort();
@@ -30,10 +35,8 @@ const generateComponentPaths = async (namespace, slots) => {
 
 const generateStylesPaths = async () => {
   try {
-    const tree = await fsFileTree(`${STYLE_PATH}`);
-    let comps = Object.keys(tree).map((p) =>
-      `/styles/user/${p}`.replace(".scss", ".css")
-    );
+    const files = await listFiles(STYLE_PATH);
+    let comps = files.map((p) => `/styles/user/${p}`.replace(".scss", ".css"));
     comps.sort();
     return comps;
   } catch {

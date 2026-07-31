@@ -1,13 +1,267 @@
 body {
-    /***
-      ADD YOUR CUSTOM STYLING HERE. (INSIDE THE body {...} section.)
-      IT WILL TAKE PRECEDENCE OVER THE STYLING IN THE STYLE.CSS FILE.
-   ***/
-    //  background-color: white;
-    //  .content {
-    //   font-size: 14px;
-    //  }
-    //  h1 {
-    //   color: black;
-    //  }
+    --h1-size: 2em;
+    --dg-graph-width: 320px;
+    --dg-graph-height: 320px;
+    --dg-graph-bg: var(--background-secondary);
+    --dg-graph-border-color: transparent;
+}
+
+/* No filetree: center content like the pre-upgrade layout */
+body.no-filetree .content {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+body.no-filetree .content.canvas-page {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+body.no-filetree .sidebar {
+    left: auto;
+    right: 17px;
+}
+
+@media (max-width: 1400px) {
+    body.no-filetree .sidebar {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 700px;
+    }
+}
+
+/* Graph title + canvas chrome from pre-upgrade layout */
+.graph .graph-title-container {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    position: relative;
+}
+
+.graph .graph-title {
+    display: block;
+    width: fit-content;
+    background-color: var(--background-secondary);
+    margin: 10px 0 0 0;
+    padding: 3px 7px;
+    font-size: 1.2rem !important;
+    border-radius: 10px 10px 0 0;
+    color: var(--h6-color);
+}
+
+.sidebar .graph {
+    width: 320px;
+    min-height: 320px;
+
+    #link-graph {
+        width: 320px !important;
+        height: 320px !important;
+    }
+
+    #graph-fs-btn {
+        margin-right: 10px;
+    }
+}
+
+#link-graph {
+    background-color: var(--background-secondary);
+    margin-bottom: 20px;
+    border-radius: 10px 0 10px 10px;
+    border: none;
+    width: fit-content;
+}
+
+@media (max-width: 1400px) {
+    #link-graph {
+        border-radius: 0 10px 10px 10px;
+    }
+}
+
+/* Controls: absolute under title, not the new boxed control bar */
+#graph-controls {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+    position: absolute;
+    top: 115%;
+    cursor: pointer;
+    right: 0;
+    left: 10px;
+    color: var(--text-accent);
+    z-index: 9;
+    padding: 0;
+    margin: 0;
+    background: none;
+    border-radius: 0;
+    box-shadow: none;
+    font-size: 0.9rem;
+
+    i, svg,
+    svg.svg-icon {
+        cursor: pointer;
+        padding-right: 10px;
+        width: 24px !important;
+        height: 24px !important;
+        min-width: 24px !important;
+        min-height: 24px !important;
+        --icon-size: 24px;
+        --icon-stroke: 2;
+        opacity: 1;
+        stroke-width: 2 !important;
+
+        &:hover {
+            opacity: 1;
+            color: var(--text-accent);
+        }
+    }
+
+    .ctrl-right {
+        display: flex;
+        align-items: center;
+        margin-left: auto;
+        gap: 4px;
+    }
+
+    .depth-control {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 7px;
+
+        label {
+            font-size: 0.9rem;
+        }
+
+        .slider {
+            datalist {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                font-size: 0.6rem;
+            }
+
+            option {
+                padding: 0;
+            }
+        }
+
+        #depth-display {
+            background-color: var(--text-accent);
+            color: white;
+            width: 1.3rem;
+            height: 1.3rem;
+            font-size: 0.8rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 0.3rem;
+            border-radius: 50%;
+        }
+    }
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    margin-top: -10px;
+}
+
+/*
+ * Local expand fullscreen.
+ * Must beat `#graph-component { position: relative }` (ID specificity),
+ * otherwise the panel stays a flex child of the narrow sidebar.
+ */
+#graph-component.graph-fs {
+    position: fixed !important;
+    top: 50% !important;
+    left: 50% !important;
+    right: auto !important;
+    bottom: auto !important;
+    height: calc(100vmin - 100px) !important;
+    width: calc(100vmin - 100px) !important;
+    min-height: 350px !important;
+    min-width: 350px !important;
+    max-width: none !important;
+    max-height: none !important;
+    transform: translate(-50%, -50%) !important;
+    z-index: 9999 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    background-color: var(--background-secondary) !important;
+    border: 1px solid var(--text-accent) !important;
+    border-radius: 5px !important;
+    padding-top: 5px !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+
+    #link-graph {
+        width: 100% !important;
+        height: 100% !important;
+        flex: 1 1 auto !important;
+        margin-bottom: 0 !important;
+    }
+
+    #graph-controls {
+        margin: 8px 10px !important;
+    }
+
+    .graph-title-container {
+        flex: 0 0 auto;
+    }
+
+    .graph-title {
+        display: none !important;
+    }
+}
+
+/* Global graph modal (globe) — escape sidebar containing block */
+#full-graph {
+    position: fixed !important;
+    top: 50% !important;
+    left: 50% !important;
+    height: calc(100vmin - 100px) !important;
+    width: calc(100vmin - 100px) !important;
+    min-height: 350px !important;
+    min-width: 350px !important;
+    max-width: none !important;
+    transform: translate(-50%, -50%) !important;
+    z-index: 9999 !important;
+    display: none;
+    background-color: var(--background-secondary) !important;
+    border: 1px solid var(--text-accent) !important;
+    border-radius: 5px !important;
+    backdrop-filter: none !important;
+
+    &#full-graph.is-open {
+        display: block !important;
+    }
+
+    #full-graph-container {
+        position: static !important;
+        top: auto !important;
+        left: auto !important;
+        transform: none !important;
+        width: 100% !important;
+        height: 100% !important;
+        background: transparent !important;
+        border: none !important;
+        border-radius: 0 !important;
+    }
+
+    #full-graph-close {
+        position: absolute !important;
+        top: 10px !important;
+        right: 10px !important;
+        cursor: pointer;
+        z-index: 9;
+        color: var(--text-accent);
+
+        svg,
+        svg.svg-icon {
+            width: 24px !important;
+            height: 24px !important;
+            --icon-size: 24px;
+        }
+    }
 }

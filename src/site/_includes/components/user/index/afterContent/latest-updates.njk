@@ -1,0 +1,15 @@
+<section class="latest-updates">
+  <h2>Latest updates</h2>
+  <ul class="latest-updates-list">
+    {% for item in collections.note | recentNotes %}
+      <li>
+        <a href="{{ item.url }}" class="internal-link">{{ item.title }}</a>
+        {% if item.updated %}
+          <span class="latest-updates-date human-date" data-date="{{ item.updated }}"></span>
+        {% elif item.created %}
+          <span class="latest-updates-date human-date" data-date="{{ item.created }}"></span>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+</section>

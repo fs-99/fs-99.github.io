@@ -6,6 +6,25 @@ body {
     --dg-graph-border-color: transparent;
 }
 
+/* Fixed navbar covers hash targets (footnotes, backrefs, etc.) */
+html {
+    scroll-padding-top: calc(var(--dg-navbar-height) + 20px);
+}
+
+/* Obsidian theme sets overflow-y:auto on body.markdown-preview-view;
+   keep document scrolling so fragment links work reliably. */
+body.markdown-preview-view {
+    overflow-y: visible;
+    height: auto;
+}
+
+.footnote-item,
+.footnote-ref,
+a[id^="fnref"],
+.footnote-backref {
+    scroll-margin-top: calc(var(--dg-navbar-height) + 20px);
+}
+
 /* No filetree: center content like the pre-upgrade layout */
 body.no-filetree .content {
     margin-left: auto;
@@ -264,4 +283,51 @@ input[type="range"]::-webkit-slider-thumb {
             --icon-size: 24px;
         }
     }
+}
+
+/* Latest updates on home */
+.latest-updates {
+    margin-top: 2.5em;
+}
+
+.latest-updates-list {
+    list-style: none;
+    padding: 0;
+    margin: 0.75em 0 0;
+}
+
+.latest-updates-list li {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.35em 0.85em;
+    padding: 0.35em 0;
+    // border-bottom: 1px solid var(--background-modifier-border);
+}
+
+.latest-updates-list li:last-child {
+    border-bottom: none;
+}
+
+.latest-updates-date {
+    color: var(--text-muted);
+    font-size: 0.85em;
+}
+
+/* Per-note git history link */
+.note-history {
+    margin-top: 0.5em;
+}
+
+.note-history-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35em;
+    font-size: 0.85em;
+    color: var(--text-muted);
+    text-decoration: none;
+}
+
+.note-history-link:hover {
+    color: var(--text-accent);
 }

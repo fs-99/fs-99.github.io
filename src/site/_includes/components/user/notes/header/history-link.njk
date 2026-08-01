@@ -1,0 +1,15 @@
+{# Link to git history for this note file on GitHub #}
+{%- if page.inputPath -%}
+  {%- set repoPath = page.inputPath | replace("./", "") -%}
+  <div class="note-history">
+    <a
+      class="note-history-link"
+      href="https://github.com/fs-99/fs-99.github.io/commits/main/{{ repoPath }}"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <i data-lucide="history"></i>
+      <span>Version history</span>
+    </a>
+  </div>
+{%- endif -%}

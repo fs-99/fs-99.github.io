@@ -1,17 +1,32 @@
 <script src=" https://fastly.jsdelivr.net/npm/luxon@3.2.1/build/global/luxon.min.js "></script>
 <script defer>
   TIMESTAMP_FORMAT = "{{meta.timestampSettings.timestampFormat}}";
+  TIMESTAMP_FORMAT_DATE_ONLY = TIMESTAMP_FORMAT
+    .replace(/\s*[, ]?\s*h:mm(?::ss)?\s*a?/gi, "")
+    .replace(/\s*[, ]?\s*H:mm(?::ss)?/gi, "")
+    .replace(/\s*[, ]?\s*HH:mm(?::ss)?/gi, "")
+    .trim()
+    .replace(/,\s*$/, "") || "MMM dd, yyyy";
+
+  function hasExplicitTime(raw) {
+    if (!raw) return false;
+    // ISO/SQL with time: 2024-07-08T12:00 or 2024-07-08 12:00
+    if (/[T ]\d{1,2}:\d{2}/.test(raw)) return true;
+    // Plain date only: 2024-07-08 or 2024/07/08
+    if (/^\d{4}[-/]\d{1,2}[-/]\d{1,2}$/.test(raw.trim())) return false;
+    return /:\d{2}/.test(raw);
+  }
+
   document.querySelectorAll('.human-date').forEach(function (el) {
-    date = el.getAttribute('data-date') || el.innerText
-    parsed_date = luxon.DateTime.fromISO(date)
-    if (parsed_date.invalid != null){
-      // Date cannot be parsed
-      parsed_date = luxon.DateTime.fromSQL(date)
+    var date = el.getAttribute('data-date') || el.innerText;
+    var parsed_date = luxon.DateTime.fromISO(date);
+    if (parsed_date.invalid != null) {
+      parsed_date = luxon.DateTime.fromSQL(date);
     }
-    if (parsed_date.invalid != null){
-      // Date still cannot be parsed
-      parsed_date = luxon.DateTime.fromHTML(date)
+    if (parsed_date.invalid != null) {
+      parsed_date = luxon.DateTime.fromHTML(date);
     }
-    el.innerHTML = parsed_date.toFormat(TIMESTAMP_FORMAT);
-  })
+    var format = hasExplicitTime(date) ? TIMESTAMP_FORMAT : TIMESTAMP_FORMAT_DATE_ONLY;
+    el.innerHTML = parsed_date.toFormat(format);
+  });
 </script>

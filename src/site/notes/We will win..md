@@ -9,6 +9,8 @@ They will evolve over time.
 
 ## Latest
 
+[[System = Relationship = Condition\|System = Relationship = Condition]]
+[[Copycat\|Copycat]]
 [[Freedom for, not Freedom from\|Freedom for, not Freedom from]]
 [[What is Art?\|What is Art?]]
 [[Rescuing is about planning\|Rescuing is about planning]]

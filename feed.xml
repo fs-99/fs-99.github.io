@@ -3,10 +3,10 @@
   <title>wewillwin</title>
   <link href="https://wewillwin.dev/feed.xml" rel="self"/>
   <link href="https://wewillwin.dev"/>
-  <updated>2026-07-31T17:58:00Z</updated>
+  <updated>2026-08-01T15:05:33Z</updated>
   <id>https://wewillwin.dev</id><entry>
     <title>What is Art?</title>
-    <updated>2026-07-31T17:57:48Z</updated>
+    <updated>2026-08-01T15:05:26Z</updated>
     <id>https://wewillwin.dev/what-is-art/</id>
     <content type="html">&lt;p&gt;The thing you can&#39;t capture.&lt;br /&gt;
 I wonder what that means.&lt;/p&gt;
@@ -14,7 +14,7 @@ I wonder what that means.&lt;/p&gt;
     <link href="https://wewillwin.dev/what-is-art/"/>
   </entry><entry>
     <title>There is no free time</title>
-    <updated>2026-07-31T17:57:48Z</updated>
+    <updated>2026-08-01T15:05:26Z</updated>
     <id>https://wewillwin.dev/there-is-no-free-time/</id>
     <content type="html">&lt;p&gt;There is only &lt;em&gt;time&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;As a concept, &lt;em&gt;&amp;quot;free time&amp;quot;&lt;/em&gt; is kind of weird.&lt;br /&gt;
@@ -33,7 +33,7 @@ I might be wrong about that though, since a lot of the rich are leaders with ton
     <link href="https://wewillwin.dev/there-is-no-free-time/"/>
   </entry><entry>
     <title>The Anti-Hierarchy</title>
-    <updated>2026-07-31T17:57:48Z</updated>
+    <updated>2026-08-01T15:05:26Z</updated>
     <id>https://wewillwin.dev/the-anti-hierarchy/</id>
     <content type="html">&lt;p&gt;Serotonin marks our place in the dominance (competence) hierarchy.&lt;br /&gt;
 If anti-depressants artificially modify serotonin levels, do we artificially change the structure of the hierarchy?&lt;br /&gt;
@@ -44,8 +44,29 @@ If everyone were getting more and more depressed, using anti-depressants (and dr
 </content>
     <link href="https://wewillwin.dev/the-anti-hierarchy/"/>
   </entry><entry>
+    <title>System = Relationship = Condition</title>
+    <updated>2026-08-01T15:05:26Z</updated>
+    <id>https://wewillwin.dev/system-relationship-condition/</id>
+    <content type="html">&lt;p&gt;Reality does not only need &amp;quot;nothing&amp;quot; and &amp;quot;something&amp;quot;, but it also needs some way to bind them together. Since reality is a word, it describes a system, some function&lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;https://wewillwin.dev/#fn1&quot; id=&quot;fnref1&quot;&gt;[1]&lt;/a&gt;&lt;/sup&gt;.&lt;br /&gt;
+I made this mistake with my previous description of reality, where I assumed from the get-go that the concept inserted into reality somehow relate to one-another.&lt;br /&gt;
+The first way to resolve this is to declare reality a &amp;quot;system&amp;quot;, by which a new concept emerges.&lt;br /&gt;
+The second way to resolve it is to declare &amp;quot;relationships&amp;quot;, which, from another viewpoint, is a more direct definition, since by &amp;quot;system&amp;quot; we mean some orderly whole which interacts/relates between its internals.&lt;br /&gt;
+The third concept, &amp;quot;condition&amp;quot; is something I thought about earlier: a system is either characterized by the condition itself, or it is caused by a condition. I&#39;m not sure how to map it onto reality or relationship currently, other than &amp;quot;well, the condition is that 2 concepts exist&amp;quot;, or something more computer-sciency &amp;quot;a condition always has two sides&amp;quot;&lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;https://wewillwin.dev/#fn2&quot; id=&quot;fnref2&quot;&gt;[2]&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+&lt;p&gt;Just like every system.&lt;/p&gt;
+&lt;hr class=&quot;footnotes-sep&quot; /&gt;
+&lt;section class=&quot;footnotes&quot;&gt;
+&lt;ol class=&quot;footnotes-list&quot;&gt;
+&lt;li id=&quot;fn1&quot; class=&quot;footnote-item&quot;&gt;&lt;p&gt;What is a chair? -&amp;gt; not really an object or structure, more of a functionality &lt;a href=&quot;https://wewillwin.dev/#fnref1&quot; class=&quot;footnote-backref&quot;&gt;↩︎&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&quot;fn2&quot; class=&quot;footnote-item&quot;&gt;&lt;p&gt;In programming languages, you can do &lt;code&gt;if true&lt;/code&gt;, but that&#39;s just syntactical: a certainty, not a condition &lt;a href=&quot;https://wewillwin.dev/#fnref2&quot; class=&quot;footnote-backref&quot;&gt;↩︎&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;
+</content>
+    <link href="https://wewillwin.dev/system-relationship-condition/"/>
+  </entry><entry>
     <title>Silly con valley</title>
-    <updated>2026-07-31T17:57:48Z</updated>
+    <updated>2026-08-01T15:05:26Z</updated>
     <id>https://wewillwin.dev/silly-con-valley/</id>
     <content type="html">&lt;p&gt;After many years of innovation, Silicon Valley has turned to shit.&lt;br /&gt;
 It is now filled with con-artists and people who trust those naively.&lt;/p&gt;
@@ -57,7 +78,7 @@ It is now filled with con-artists and people who trust those naively.&lt;/p&gt;
     <link href="https://wewillwin.dev/silly-con-valley/"/>
   </entry><entry>
     <title>Rescuing is about planning</title>
-    <updated>2026-07-31T17:57:48Z</updated>
+    <updated>2026-08-01T15:05:26Z</updated>
     <id>https://wewillwin.dev/rescuing-is-about-planning/</id>
     <content type="html">&lt;p&gt;Do you think you can rescue the world without planning?&lt;/p&gt;
 &lt;p&gt;Would you try to rescue your family without a plan in which you are confident is the best possible one?&lt;br /&gt;
@@ -99,7 +120,7 @@ The rescue plan starts with communication.&lt;/p&gt;
     <link href="https://wewillwin.dev/rescuing-is-about-planning/"/>
   </entry><entry>
     <title>No, Discord, I am not chilling</title>
-    <updated>2026-07-31T17:57:48Z</updated>
+    <updated>2026-08-01T15:05:26Z</updated>
     <id>https://wewillwin.dev/no-discord-i-am-not-chilling/</id>
     <content type="html">&lt;p&gt;What it says in the title.&lt;/p&gt;
 &lt;p&gt;The endless feature bloat that all big tech companies go after is a problem of company scaling. When your engineers (maybe designers) are mostly &amp;quot;done&amp;quot; with the product, they have to invent new ways to keep money flowing, lest they have to find a new, real problem to solve.&lt;/p&gt;
@@ -110,7 +131,7 @@ Maybe a bit to stir controversy, because all publicity is good publicity for hug
     <link href="https://wewillwin.dev/no-discord-i-am-not-chilling/"/>
   </entry><entry>
     <title>Freedom for, not Freedom from</title>
-    <updated>2026-07-31T17:57:48Z</updated>
+    <updated>2026-08-01T15:05:26Z</updated>
     <id>https://wewillwin.dev/freedom-for-not-freedom-from/</id>
     <content type="html">&lt;p&gt;You always need a reason to do something big.&lt;br /&gt;
 And often big reasons tend to involve freedom.&lt;br /&gt;
@@ -120,8 +141,23 @@ This re-contextualizes from destroying to creating and won&#39;t leave you empty
 </content>
     <link href="https://wewillwin.dev/freedom-for-not-freedom-from/"/>
   </entry><entry>
+    <title>Copycat</title>
+    <updated>2026-08-01T15:05:26Z</updated>
+    <id>https://wewillwin.dev/copycat/</id>
+    <content type="html">&lt;p&gt;New technologies turn us more into what we&#39;re creating and consuming.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;industrialisation -&amp;gt; mechanical analogy (pipes and gears)&lt;/li&gt;
+&lt;li&gt;internet -&amp;gt; digital analogy (cables, wires, antenna, waves)&lt;/li&gt;
+&lt;li&gt;artificial intelligence -&amp;gt; &lt;em&gt;human&lt;/em&gt; analogy (neurons, brains, chats, generation, black box, statistics, assistant... labeling slave)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;TVs turned us more into &amp;quot;watchers&amp;quot; and consumers and moderators into showmen.&lt;br /&gt;
+The internet turned us more into creatives and artists, now again more into consumers and addicts.&lt;/p&gt;
+&lt;p&gt;Now, artificial intelligence is turning us into...&lt;/p&gt;
+</content>
+    <link href="https://wewillwin.dev/copycat/"/>
+  </entry><entry>
     <title>Bureaucracy fosters Extremism</title>
-    <updated>2026-07-31T17:57:48Z</updated>
+    <updated>2026-08-01T15:05:26Z</updated>
     <id>https://wewillwin.dev/bureaucracy-fosters-extremism/</id>
     <content type="html">&lt;p&gt;The less powerful you feel, the more power you seek after and the more drastic measures you think of.&lt;br /&gt;
 Bureaucracy is the system by which power is subverted upwards.&lt;br /&gt;

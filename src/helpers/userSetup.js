@@ -31,6 +31,47 @@ function recentNotes(notes, limit = 300) {
   return Number.isFinite(n) && n > 0 ? items.slice(0, n) : items;
 }
 
+/**
+ * Add the dynamic node links to the graph so home stays connected.
+ */
+function connectHomeToRecentNotes(graph, notes) {
+  if (!graph?.nodes) return graph;
+
+  const home =
+    graph.nodes[graph.homeAlias] ||
+    Object.values(graph.nodes).find((node) => node.home);
+  if (!home) return graph;
+
+  if (!Array.isArray(home.outBound)) home.outBound = [];
+  if (!Array.isArray(home.neighbors)) home.neighbors = [];
+  if (!Array.isArray(graph.links)) graph.links = [];
+
+  for (const item of recentNotes(notes)) {
+    const target = graph.nodes[item.url];
+    if (!target || target.url === home.url) continue;
+
+    if (!home.outBound.includes(target.url)) home.outBound.push(target.url);
+    if (!home.neighbors.includes(target.url)) home.neighbors.push(target.url);
+
+    if (!Array.isArray(target.neighbors)) target.neighbors = [];
+    if (!Array.isArray(target.backLinks)) target.backLinks = [];
+    if (!target.neighbors.includes(home.url)) target.neighbors.push(home.url);
+    if (!target.backLinks.includes(home.url)) target.backLinks.push(home.url);
+
+    const alreadyLinked = graph.links.some(
+      (link) => link.source === home.id && link.target === target.id
+    );
+    if (!alreadyLinked) {
+      graph.links.push({ source: home.id, target: target.id });
+    }
+
+    target.size = target.neighbors.length;
+  }
+
+  home.size = home.neighbors.length;
+  return graph;
+}
+
 function userEleventySetup(eleventyConfig) {
   eleventyConfig.addFilter("recentNotes", recentNotes);
 }
@@ -38,3 +79,4 @@ function userEleventySetup(eleventyConfig) {
 exports.userMarkdownSetup = userMarkdownSetup;
 exports.userEleventySetup = userEleventySetup;
 exports.recentNotes = recentNotes;
+exports.connectHomeToRecentNotes = connectHomeToRecentNotes;

@@ -1,6 +1,7 @@
 const { getGraph } = require("../../helpers/linkUtils");
 const { getFileTree } = require("../../helpers/filetreeUtils");
 const { userComputed } = require("../../helpers/userUtils");
+const { connectHomeToRecentNotes } = require("../../helpers/userSetup");
 
 function fromNoteProps(data, key) {
   const props = data["dg-note-properties"];
@@ -10,7 +11,8 @@ function fromNoteProps(data, key) {
 }
 
 module.exports = {
-  graph: async (data) => await getGraph(data),
+  graph: async (data) =>
+    connectHomeToRecentNotes(await getGraph(data), data.collections.note),
   filetree: (data) => getFileTree(data),
   userComputed: (data) => userComputed(data),
   noteProps: (data) => data["dg-note-properties"],

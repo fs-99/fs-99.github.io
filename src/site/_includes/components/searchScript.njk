@@ -145,6 +145,9 @@
             const doc = parser.parseFromString(html, 'text/html');
 
             const content = doc.querySelector('.content, .cm-s-obsidian, article, main');
+            if (content) {
+                content.querySelectorAll('.giscus, script[src*="giscus"], .note-history').forEach((el) => el.remove());
+            }
             const htmlContent = content ? content.innerHTML : '';
             previewCache.set(url, htmlContent);
             return htmlContent;

@@ -140,7 +140,8 @@
         return;
       }
       if (!linkHistories[contentURL]) {
-        iframe.src = contentURL
+        var previewURL = contentURL + (contentURL.indexOf('?') === -1 ? '?' : '&') + 'preview=1'
+        iframe.src = previewURL
         iframe.onload = function () {
           let iframeWindow;
           let iframeDoc;
@@ -162,6 +163,11 @@
 
           const titleEl = iframeDoc.querySelector('h1');
           const contentEl = iframeDoc.querySelector('.content');
+          if (contentEl) {
+            contentEl.querySelectorAll('.giscus, script[src*="giscus"], .note-history, .sidebar, .navbar, .graph').forEach(function (n) {
+              n.remove();
+            });
+          }
 
           tooltipContentHtml = ''
           if (titleEl) {

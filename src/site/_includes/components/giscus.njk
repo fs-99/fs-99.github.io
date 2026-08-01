@@ -1,0 +1,29 @@
+{# Skip comments inside link-preview iframes and other embeds #}
+<div class="giscus"></div>
+<script>
+  (function () {
+    if (window.self !== window.top) return;
+    if (new URLSearchParams(window.location.search).has("preview")) return;
+
+    var host = document.querySelector(".giscus");
+    if (!host) return;
+
+    var s = document.createElement("script");
+    s.src = "https://giscus.app/client.js";
+    s.async = true;
+    s.crossOrigin = "anonymous";
+    s.setAttribute("data-repo", "fs-99/fs-99.github.io");
+    s.setAttribute("data-repo-id", "R_kgDOMS2qyg");
+    s.setAttribute("data-category", "General");
+    s.setAttribute("data-category-id", "DIC_kwDOMS2qys4Cgpsj");
+    s.setAttribute("data-mapping", "title");
+    s.setAttribute("data-strict", "0");
+    s.setAttribute("data-reactions-enabled", "1");
+    s.setAttribute("data-emit-metadata", "0");
+    s.setAttribute("data-input-position", "top");
+    s.setAttribute("data-theme", "dark");
+    s.setAttribute("data-lang", "en");
+    s.setAttribute("data-loading", "lazy");
+    host.parentNode.insertBefore(s, host.nextSibling);
+  })();
+</script>

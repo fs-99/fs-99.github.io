@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/bureaucracy-fosters-extremism/"}
+{"dg-publish":true,"permalink":"/bureaucracy-fosters-extremism/","dg-note-properties":{"created":"2024-07-08","updated":"2024-07-10"}}
 ---
 
 

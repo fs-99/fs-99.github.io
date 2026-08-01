@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/the-anti-hierarchy/"}
+{"dg-publish":true,"permalink":"/the-anti-hierarchy/","dg-note-properties":{"created":"2024-07-10","updated":"2024-07-10"}}
 ---
 
 

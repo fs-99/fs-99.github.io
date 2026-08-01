@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/we-will-win/","tags":["gardenEntry"]}
+{"dg-publish":true,"permalink":"/we-will-win/","tags":["gardenEntry"],"dg-note-properties":{}}
 ---
 
 

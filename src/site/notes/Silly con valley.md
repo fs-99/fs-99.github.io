@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/silly-con-valley/"}
+{"dg-publish":true,"permalink":"/silly-con-valley/","dg-note-properties":{"created":"2024-07-12","updated":"2024-07-12"}}
 ---
 
 

@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/there-is-no-free-time/"}
+{"dg-publish":true,"permalink":"/there-is-no-free-time/","dg-note-properties":{"created":"2024-07-12","updated":"2024-07-12"}}
 ---
 
 

@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/rescuing-is-about-planning/"}
+{"dg-publish":true,"permalink":"/rescuing-is-about-planning/","dg-note-properties":{"created":"2025-03-29","updated":"2025-03-29"}}
 ---
 
 

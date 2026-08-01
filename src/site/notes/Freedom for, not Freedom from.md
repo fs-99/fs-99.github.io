@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/freedom-for-not-freedom-from/"}
+{"dg-publish":true,"permalink":"/freedom-for-not-freedom-from/","dg-note-properties":{"created":"2026-07-04","updated":"2026-07-04"}}
 ---
 
 You always need a reason to do something big.

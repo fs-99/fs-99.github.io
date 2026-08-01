@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/no-discord-i-am-not-chilling/"}
+{"dg-publish":true,"permalink":"/no-discord-i-am-not-chilling/","dg-note-properties":{"created":"2024-07-16","updated":"2024-07-16"}}
 ---
 
 

@@ -34,13 +34,13 @@
     "dependencies": {
         "@11ty/eleventy-img": "^7.0.0",
         "@sindresorhus/slugify": "^1.1.0",
-        "axios": "^1.19.0",
+        "axios": "^1.21.0",
         "dotenv": "^16.0.3",
         "eleventy-plugin-gen-favicons": "^1.1.2",
-        "glob": "^13.0.6",
+        "glob": "^14.0.3",
         "gray-matter": "^4.0.3",
         "jsep": "^1.4.0",
-        "markdown-it": "^14.1.0",
+        "markdown-it": "^14.3.3",
         "markdown-it-anchor": "^9.0.1",
         "markdown-it-attrs": "^4.1.6",
         "markdown-it-footnote": "^3.0.3",
@@ -53,8 +53,6 @@
         "yaml": "^2.8.3"
     },
     "overrides": {
-        "sharp": "^0.35.3",
-        "brace-expansion": "^5.0.9",
-        "minimatch": "^10.2.6"
+        "sharp": "^0.35.5"
     }
 }

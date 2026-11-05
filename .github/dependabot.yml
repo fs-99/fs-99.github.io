@@ -14,3 +14,8 @@ updates:
         # For slugify, ignore all updates.
       - dependency-name: "@11ty/eleventy-plugin-rss"
         versions: [ "^1.2.0" ]
+
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
